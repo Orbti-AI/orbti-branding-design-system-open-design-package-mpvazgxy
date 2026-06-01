@@ -1,0 +1,40 @@
+{
+  "candidateId": "b009d89f-ed22-49d9-bc93-7d952b631783",
+  "projectId": "ds-branding-e-design-system",
+  "runId": "8617aad7-7dbf-44de-895b-bb3333dac547",
+  "conversationId": "5e8475f6-ef4f-4bde-bde1-11971df8e29d",
+  "provenance": {
+    "summary": "Detected from README.md, SKILL.md, ui_kits/app/README.md, context/source-context.md after a successful run.",
+    "detectedAt": 1780258586607
+  },
+  "sourceRefs": [
+    {
+      "kind": "file",
+      "value": "README.md",
+      "label": "README.md",
+      "size": 7337,
+      "copied": true
+    },
+    {
+      "kind": "file",
+      "value": "SKILL.md",
+      "label": "SKILL.md",
+      "size": 4892,
+      "copied": true
+    },
+    {
+      "kind": "file",
+      "value": "ui_kits/app/README.md",
+      "label": "ui_kits/app/README.md",
+      "size": 3412,
+      "copied": true
+    },
+    {
+      "kind": "file",
+      "value": "context/source-context.md",
+      "label": "context/source-context.md",
+      "size": 10874,
+      "copied": true
+    }
+  ]
+}
