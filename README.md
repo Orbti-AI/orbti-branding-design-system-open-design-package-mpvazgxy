@@ -1,6 +1,6 @@
 # ORBTI — Branding & Design System (Open Design package)
 
-A reusable Open Design design-system package for the **ORBTI** brand: a dark-first,
+A reusable Open Design design-system package for the **ORBTI** brand: a cream-first,
 warm, premium visual identity built around a single coral/terracotta accent, Inter +
 JetBrains Mono, fluid `clamp()` tokens, and a full web component library. Drop it
 into any Open Design project to generate on-brand ORBTI artifacts.
@@ -116,7 +116,7 @@ real brand tokens/assets. Open them from the **Design System** tab.
 
 ## At a glance
 
-- **Theme:** dark-first warm near-black `#0A0808`; warm cream light alternate.
+- **Theme:** cream-first warm canvas `#FDF5F1`; warm near-black `#0A0808` dark alternate.
 - **Accent:** coral sunset `#E8704B` → terracotta `#B85C3A`, used ≤ twice per view.
 - **Type:** Inter (300→900) + JetBrains Mono; fluid `clamp()` scale.
 - **Grid:** 12-col with container queries; `1280px` max; generous section rhythm.

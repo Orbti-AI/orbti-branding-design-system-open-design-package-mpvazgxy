@@ -1,8 +1,8 @@
 # ORBTI — Branding & Design System
 
 > Category: Custom · Brand / Product
-> Surface: web (dark-first, responsive)
-> Version: v1.0 — extracted from the shipped ORBTI site (`05-site/`)
+> Surface: web (cream-first, responsive)
+> Version: v1.1 — extracted from the shipped ORBTI site (`05-site/`); default theme set to cream-first by brand decision (the source site was dark-first — see PROVENANCE.md)
 
 The canonical rules document for the **ORBTI** brand and design system. ORBTI is
 an AI-agent agency — it builds bespoke AI agents for operations, customer
@@ -26,11 +26,13 @@ service pages — **Core** (operations), **Pulse** (customer experience), **Hori
 the open-source **ORBIT** framework. Audience: C-level, heads of operations, CX and
 BI. The system must read credible and high-end. See README.md for the full overview.
 
-**Dark-first, warm always, premium.** ORBTI's canvas is a warm near-black
-(`#0A0808`) — not a neutral slate grey. Every neutral carries a faint warm cast
-(reds/browns mixed into the inks), so the whole interface reads like dusk over a
-Mars-like landscape rather than a cold "tech" dashboard. A single coral→terracotta
-accent does all the heavy lifting: CTAs, links, focus rings, selection, glows.
+**Cream-first, warm always, premium.** ORBTI's default canvas is a warm cream
+(`#FDF5F1`) — not a clinical white. Every neutral carries a faint warm cast
+(reds/browns mixed into the inks), so the whole interface reads like warm paper at
+dusk rather than a cold "tech" dashboard. A single coral→terracotta accent does all
+the heavy lifting: CTAs, links, focus rings, selection, glows. A warm **near-black
+(`#0A0808`) is the alternate dark theme** — reserved for intentional dark moments
+(a dark hero, splash, or the reverse logo), not the default surface.
 
 The mood is **confident, technical, editorial**. References that shaped it:
 Anthropic (clamp type system, two-color restraint), Rootly (premium dark,
@@ -40,7 +42,7 @@ expertise — so the system must feel credible and high-end, never playful or
 gradient-soaked.
 
 **Signature moves**
-- Warm near-black background with a faint 40px dot/line grid overlay (`rgba(253,245,241,.04)`).
+- Warm cream canvas with a faint 40px dot grid overlay (dark dots, `rgba(30,5,5,.04)`); the dark alternate inverts it to cream dots on near-black (`rgba(253,245,241,.04)`).
 - One coral accent (`#E8704B`) used sparingly — at most twice per view.
 - Mono (JetBrains Mono) eyebrows/labels in uppercase with wide tracking.
 - Soft radial coral glow behind hero focal points (`--gradient-glow`, `--shadow-glow`).
@@ -50,8 +52,8 @@ gradient-soaked.
 
 ## 2. Color
 
-Two themes share one brand accent. **Dark is the default.** Light is a warm cream
-alternate, not a clinical white.
+Two themes share one brand accent. **Cream is the default.** A warm near-black is
+the alternate dark theme, not a cold slate.
 
 ### Brand
 | Token | Hex | Role |
@@ -61,7 +63,20 @@ alternate, not a clinical white.
 | `--color-terracotta-light` | `#D47A56` | Hover |
 | `--color-coral-light` | `#F08B63` | Highlight · inline code |
 
-### Dark theme (default) — semantic
+### Cream theme (default) — semantic
+| Token | Hex |
+|---|---|
+| `--color-bg` | `#FDF5F1` |
+| `--color-surface` | `#EDE4DC` |
+| `--color-surface-deep` | `#E5DAD0` |
+| `--color-border` | `#DDD0C5` |
+| `--color-border-subtle` | `#EBE2DA` |
+| `--color-text` | `#1E0505` |
+| `--color-text-secondary` | `#4A0E0E` |
+| `--color-text-muted` | `#8B3A3A` |
+| `--color-text-faint` | `#B85C5C` |
+
+### Dark theme (alternate) — semantic
 | Token | Hex |
 |---|---|
 | `--color-bg` | `#0A0808` |
@@ -74,17 +89,6 @@ alternate, not a clinical white.
 | `--color-text-muted` | `#DDD4CE` |
 | `--color-text-faint` | `#9E5A5A` |
 
-### Light theme (warm cream alternate) — semantic
-| Token | Hex |
-|---|---|
-| `--color-bg` | `#FDF5F1` |
-| `--color-surface` | `#EDE4DC` |
-| `--color-surface-deep` | `#E5DAD0` |
-| `--color-border` | `#DDD0C5` |
-| `--color-text` | `#1E0505` |
-| `--color-text-secondary` | `#4A0E0E` |
-| `--color-text-muted` | `#8B3A3A` |
-
 ### Functional / status
 `--color-success #4A7A5B` · `--color-error #C04040` · `--color-warning #C08840` · `--color-info #5B7A9E`.
 Status colors are muted/desaturated to sit inside the warm palette — never neon.
@@ -96,8 +100,9 @@ Coral is also expressed as low-alpha tints for backgrounds and states:
 Gradients: `--gradient-accent` (coral→terracotta 135°), `--gradient-glow` (radial coral),
 `--gradient-hero` (layered radial dark reds), `--gradient-overlay-bottom` (image scrims).
 
-**Switching themes:** set `data-theme="light"` (or `"dark"`) on `<html>`/`<body>`.
-Dark is applied to `:root` by default.
+**Switching themes:** cream is applied to `:root` by default; set
+`data-theme="dark"` on `<html>`/`<body>` for the dark alternate (and
+`data-theme="light"` is available as an explicit alias of the default).
 
 ---
 
@@ -160,8 +165,8 @@ Density is generous and editorial — sections breathe with `--space-2xl` vertic
 
 ## 6. Components
 
-All components are class-based, dark-first, and consume the tokens above. Full CSS
-is preserved under `source_examples/design-system/`.
+All components are class-based, theme-aware (cream default, dark alternate), and
+consume the tokens above. Full CSS is preserved under `source_examples/design-system/`.
 
 - **Buttons** — `.btn` + size (`-s/-m/-l/-xl`) + variant: `.btn-primary` (coral fill, glow on hover), `.btn-secondary` (outline → coral on hover), `.btn-ghost` (coral text, tinted hover). `:active` scales to `0.98`.
 - **Cards** — `.card` (transparent, bordered, coral-tint on hover) with variants: `.card-accent` (gradient top bar), `.card-image`, `.card-stat` (huge coral number + mono label), `.card-pillar` (48px product icon). `.cards-grid` uses container queries.
@@ -187,8 +192,8 @@ is preserved under `source_examples/design-system/`.
 
 ## 8. Voice & Brand
 
-- **Official logo (primary, applied by default):** the primary brand mark is the **terracotta astronaut tile** — an engraved figure (a small bird etched on the helmet) above the `ORBTI` wordmark, on a warm cream rounded-square with a thick terracotta border. This is the **default applied mark across the brand — on both light and dark surfaces.** Its warm cream field is intentional even against the dark-first canvas: the tile is meant to read as a bright, self-contained badge, not to dissolve into the background. The **full logo** — engraving **plus the `ORBTI` wordmark** — is preserved byte-for-byte at `assets/logos/orbti-logo.png`. The **app-icon form** is a **wordmark-less variant** — the astronaut engraving alone on the same cream/terracotta tile, no `ORBTI` lettering — preserved at `build/icon.png` (runtime icon) and aliased at `assets/logos/orbti-icon.png`; use it wherever the mark renders small or square (favicon, app icon, avatar, social profile) so the wordmark never has to compete at small sizes. Both share the brand terracotta ink `#B85C3A` and the cream `--color-bg` (light) `#FDF5F1`. The mark was recolored from the original burnt-umber master (`#5A2819`) at the brand owner's request — a tonal gradient map shifts the ink onto the brand terracotta while preserving the cream field and the engraving's depth; the wordmark-less icon was recolored from its own clean upload through the identical gradient map so its ink matches the full logo exactly. The umber master is retained at `assets/logos/orbti-logo-umber-original.png`, and a brighter coral `#E8704B` variant is on hand. Keep clear-space ≥ the border thickness on all sides; treat the recolored terracotta tiles as canonical and do not recolor them further, place them on busy backgrounds, or stretch the tile.
-- **Reverse logo (optional, specific-case only):** the official **reverse** mark inverts the tile — a **near-black field** (`#0A0808`, the dark-first canvas) carries the engraving and `ORBTI` wordmark in coral `#E8704B`, and the border becomes a coral ring that reads as a glow against the dark canvas. Preserved at `assets/logos/orbti-logo-reverse.png` (RGBA, transparent outside the tile), with a **wordmark-less reverse app-icon** form — the coral astronaut engraving alone on the near-black tile, no `ORBTI` lettering — at `assets/logos/orbti-icon-reverse.png` for small / square dark-surface slots (favicon, avatar, app icon) where the wordmark would crowd, mirroring the cream full-logo/app-icon split. It is **not** the default for dark surfaces — the cream tile above stays primary everywhere. Reach for the reverse mark only in **select, intentional moments** where its dissolve-into-the-canvas, coral-glow treatment is the desired effect (e.g. a dark hero, splash, or a deliberately understated dark-mode footer). **Never apply the reverse mark on a cream / light field** (`#FDF5F1` or any light surface) — its coral-on-near-black treatment only reads against the dark canvas; on cream the tile becomes a dark block that fights the page and loses the coral-ring glow. On light surfaces use the primary cream tile instead. Do not place the reverse mark on busy backgrounds or below ~32px, where the coral engraving thickens; do not recolor it further.
+- **Official logo (primary, applied by default):** the primary brand mark is the **terracotta astronaut tile** — an engraved figure (a small bird etched on the helmet) above the `ORBTI` wordmark, on a warm cream rounded-square with a thick terracotta border. This is the **default applied mark across the brand — on both light and dark surfaces.** Its warm cream field sits naturally on the default cream canvas, and is intentional even against the dark alternate theme: the tile is meant to read as a bright, self-contained badge, not to dissolve into the background. The **full logo** — engraving **plus the `ORBTI` wordmark** — is preserved byte-for-byte at `assets/logos/orbti-logo.png`. The **app-icon form** is a **wordmark-less variant** — the astronaut engraving alone on the same cream/terracotta tile, no `ORBTI` lettering — preserved at `build/icon.png` (runtime icon) and aliased at `assets/logos/orbti-icon.png`; use it wherever the mark renders small or square (favicon, app icon, avatar, social profile) so the wordmark never has to compete at small sizes. Both share the brand terracotta ink `#B85C3A` and the cream `--color-bg` (light) `#FDF5F1`. The mark was recolored from the original burnt-umber master (`#5A2819`) at the brand owner's request — a tonal gradient map shifts the ink onto the brand terracotta while preserving the cream field and the engraving's depth; the wordmark-less icon was recolored from its own clean upload through the identical gradient map so its ink matches the full logo exactly. The umber master is retained at `assets/logos/orbti-logo-umber-original.png`, and a brighter coral `#E8704B` variant is on hand. Keep clear-space ≥ the border thickness on all sides; treat the recolored terracotta tiles as canonical and do not recolor them further, place them on busy backgrounds, or stretch the tile.
+- **Reverse logo (optional, specific-case only):** the official **reverse** mark inverts the tile — a **near-black field** (`#0A0808`, the dark alternate theme's canvas) carries the engraving and `ORBTI` wordmark in coral `#E8704B`, and the border becomes a coral ring that reads as a glow against the dark canvas. Preserved at `assets/logos/orbti-logo-reverse.png` (RGBA, transparent outside the tile), with a **wordmark-less reverse app-icon** form — the coral astronaut engraving alone on the near-black tile, no `ORBTI` lettering — at `assets/logos/orbti-icon-reverse.png` for small / square dark-surface slots (favicon, avatar, app icon) where the wordmark would crowd, mirroring the cream full-logo/app-icon split. It is **not** the default for dark surfaces — the cream tile above stays primary everywhere. Reach for the reverse mark only in **select, intentional moments** where its dissolve-into-the-canvas, coral-glow treatment is the desired effect (e.g. a dark hero, splash, or a deliberately understated dark-mode footer). **Never apply the reverse mark on a cream / light field** (`#FDF5F1` or any light surface) — its coral-on-near-black treatment only reads against the dark canvas; on cream the tile becomes a dark block that fights the page and loses the coral-ring glow. On light surfaces use the primary cream tile instead. Do not place the reverse mark on busy backgrounds or below ~32px, where the coral engraving thickens; do not recolor it further.
 - **Mark hierarchy:** the **cream terracotta tile is the lead mark** and is applied by default wherever the brand appears, in two forms: the **full logo with wordmark** (`assets/logos/orbti-logo.png`) for brand-level placements where the `ORBTI` lettering reads clearly, and the **wordmark-less icon** (`build/icon.png` / `assets/logos/orbti-icon.png`) for identity/app slots that are small or square — favicon, app icon, avatar, splash, social profile — where the wordmark would crowd. Use the flat **`ORBTI` wordmark** (`assets/logos/orbti-wordmark-*.svg`) for in-product nav, headers, and footers where the full illustration would be too heavy. Use the **reverse coral tile** only as an occasional, intentional dark-surface variant (see above). Use the **product lockups** (Core / Pulse / Horizon) only for those sub-brands.
 - **Name:** always **ORBTI**, set in Inter 900 with `-0.03em` tracking; an optional small coral dot sits to the upper right of the wordmark.
 - **Tone:** provocative, confident, technical. Primary language is **Brazilian Portuguese**. Sentence-case headlines, em-dashes for asides, no exclamation spam.

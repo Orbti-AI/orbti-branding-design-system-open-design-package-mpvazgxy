@@ -14,26 +14,27 @@
   /* ───────────────────────────────────────────────────────────────
      ORBTI — brand presentation page
      Tokens lifted verbatim from the ORBTI design system
-     (colors_and_type.css / DESIGN.md). Dark-first, one coral accent.
+     (colors_and_type.css / DESIGN.md). Cream-first, one coral accent.
      ─────────────────────────────────────────────────────────────── */
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
   :root {
-    --bg:            #0A0808;
-    --surface:       #0E0909;
-    --surface-deep:  #120B0B;
-    --border:        #3A2525;
-    --border-subtle: rgba(58, 37, 37, 0.5);
-    --text:          #FDF5F1;
-    --text-secondary:#EDE4DC;
-    --text-muted:    #DDD4CE;
-    --text-faint:    #9E5A5A;
+    --bg:            #FDF5F1;
+    --surface:       #EDE4DC;
+    --surface-deep:  #E5DAD0;
+    --border:        #DDD0C5;
+    --border-subtle: #EBE2DA;
+    --text:          #1E0505;
+    --text-secondary:#4A0E0E;
+    --text-muted:    #8B3A3A;
+    --text-faint:    #B85C5C;
 
     --coral:         #E8704B;
     --terracotta:    #B85C3A;
     --terracotta-l:  #D47A56;
     --coral-light:   #F08B63;
     --cream:         #FDF5F1;
+    --ink:           #0A0808;  /* explicit dark field — reverse-mark stage / intentional dark moments */
 
     --coral-bg:        rgba(232, 112, 75, 0.08);
     --coral-bg-hover:  rgba(232, 112, 75, 0.14);
@@ -69,14 +70,14 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
-  ::selection { background: var(--focus-ring); color: var(--cream); }
+  ::selection { background: var(--focus-ring); color: var(--text); }
 
   /* faint 40px dot grid over the whole canvas */
   body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background-image: radial-gradient(rgba(253, 245, 241, 0.04) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(30, 5, 5, 0.045) 1px, transparent 1px);
     background-size: 40px 40px;
     pointer-events: none;
     z-index: 0;
@@ -97,7 +98,7 @@
     font-weight: 500;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--coral);
+    color: var(--terracotta);
     display: inline-block;
   }
   .lead { font-weight: 300; font-size: clamp(1.125rem, 1rem + 0.6vw, 1.3rem); color: var(--text-secondary); max-width: 56ch; }
@@ -121,7 +122,7 @@
     border-bottom: 1px solid transparent;
   }
   .nav.scrolled {
-    background: rgba(10, 8, 8, 0.72);
+    background: rgba(253, 245, 241, 0.78);
     backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
     border-bottom-color: var(--border-subtle);
   }
@@ -139,10 +140,10 @@
   .nav-link:hover::after { width: 100%; }
   .nav-cta {
     font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--coral); border: 1px solid var(--border); padding: 0.55rem 1rem; border-radius: var(--r-s);
+    color: var(--terracotta); border: 1px solid var(--border); padding: 0.55rem 1rem; border-radius: var(--r-s);
     transition: background 0.2s, border-color 0.2s;
   }
-  .nav-cta:hover { background: var(--coral-bg); border-color: var(--coral); color: var(--coral); }
+  .nav-cta:hover { background: var(--coral-bg); border-color: var(--coral); color: var(--terracotta); }
   @media (max-width: 880px) { .nav-links .nav-link { display: none; } }
 
   /* ─── Hero ────────────────────────────────────────────── */
@@ -153,18 +154,18 @@
   .hero-bg {
     position: absolute; inset: 0; z-index: 0;
     background:
-      radial-gradient(ellipse 55% 60% at 72% 42%, rgba(232,112,75,0.10) 0%, transparent 62%),
-      radial-gradient(ellipse 50% 70% at 18% 70%, rgba(74,14,14,0.45) 0%, transparent 60%),
-      linear-gradient(180deg, #0A0808 0%, #0a0202 100%);
+      radial-gradient(ellipse 55% 60% at 72% 42%, rgba(232,112,75,0.12) 0%, transparent 62%),
+      radial-gradient(ellipse 50% 70% at 18% 70%, rgba(184,92,58,0.08) 0%, transparent 60%),
+      linear-gradient(180deg, #FDF5F1 0%, #F5EDE6 100%);
   }
-  .hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.14; mix-blend-mode: screen; }
+  .hero-bg img { display: none; } /* dark abstract asset doesn't sit on cream; gradient + coral glow carry the hero */
   .hero-inner { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; width: 100%; }
   .hero-copy { max-width: var(--col); }
   .hero h1 {
     font-weight: 900; letter-spacing: -0.04em;
     font-size: clamp(2.75rem, 1.8rem + 5vw, 5rem); line-height: 1.02; margin: 1.5rem 0;
   }
-  .hero h1 .accent { color: var(--coral); }
+  .hero h1 .accent { color: var(--terracotta); }
   .hero .lead { margin-bottom: 2.25rem; }
   .hero-figure { display: grid; place-items: center; position: relative; }
   .hero-figure::before {
@@ -201,11 +202,11 @@
   .concept { border-top: 1px solid var(--border-subtle); }
   .concept-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
   .concept h2 { font-size: clamp(2rem, 1.3rem + 3.5vw, 3.25rem); font-weight: 700; }
-  .concept h2 em { font-style: normal; color: var(--coral); }
+  .concept h2 em { font-style: normal; color: var(--terracotta); }
   .def { display: flex; flex-direction: column; gap: 0.4rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border-subtle); }
   .def:last-child { border-bottom: 0; }
   .def .term { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta-l); }
-  .def .term b { color: var(--coral); }
+  .def .term b { color: var(--terracotta); }
   .def p { color: var(--text-secondary); font-weight: 300; }
 
   /* ─── Mark system ─────────────────────────────────────── */
@@ -213,14 +214,14 @@
   .mark-card { border: 1px solid var(--border); border-radius: var(--r-xl); overflow: hidden; }
   .mark-stage { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 2.5rem; place-items: center; }
   .mark-stage.on-cream { background: var(--cream); }
-  .mark-stage.on-dark { background: var(--bg); border-bottom: 1px solid var(--border); }
+  .mark-stage.on-dark { background: var(--ink); border-bottom: 1px solid var(--border); }
   .mark-stage img { width: 100%; max-width: 150px; border-radius: var(--r-m); }
   .mark-meta { padding: 1.25rem 1.5rem 1.5rem; }
-  .mark-meta .tag { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral); }
+  .mark-meta .tag { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta); }
   .mark-meta h4 { margin: 0.4rem 0 0.5rem; font-size: 1.05rem; }
   .mark-meta p { font-size: 0.9rem; color: var(--text-muted); font-weight: 300; max-width: none; }
   .mark-meta .warn { color: var(--text-faint); }
-  .mark-meta .warn b { color: var(--coral-light); }
+  .mark-meta .warn b { color: var(--terracotta); }
 
   /* ─── Color ───────────────────────────────────────────── */
   .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
@@ -240,14 +241,14 @@
   .type-spec .w3 { font-weight: 300; } .type-spec .w4 { font-weight: 400; } .type-spec .w7 { font-weight: 700; } .type-spec .w9 { font-weight: 900; }
   .mono-spec { font-family: var(--font-mono); }
   .mono-spec .line { font-size: 0.95rem; letter-spacing: 0.04em; color: var(--text-secondary); padding: 0.35rem 0; }
-  .mono-spec .line .k { color: var(--coral); }
+  .mono-spec .line .k { color: var(--terracotta); }
 
   /* ─── ORBIT method ────────────────────────────────────── */
   .method { background: var(--surface-deep); border-block: 1px solid var(--border); }
   .orbit-bar { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border-subtle); border: 1px solid var(--border-subtle); border-radius: var(--r-xl); overflow: hidden; margin-top: 2.5rem; }
   .orbit-cell { background: var(--bg); padding: clamp(1.5rem, 3vw, 2.25rem) 1.25rem; transition: background 0.3s; cursor: default; }
   .orbit-cell:hover { background: var(--coral-bg); }
-  .orbit-cell .letter { font-weight: 900; font-size: clamp(2.5rem, 1.5rem + 4vw, 4rem); letter-spacing: -0.04em; color: var(--coral); line-height: 1; }
+  .orbit-cell .letter { font-weight: 900; font-size: clamp(2.5rem, 1.5rem + 4vw, 4rem); letter-spacing: -0.04em; color: var(--terracotta); line-height: 1; }
   .orbit-cell .name { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); margin: 0.85rem 0 0.4rem; }
   .orbit-cell .desc { font-size: 0.82rem; color: var(--text-muted); font-weight: 300; line-height: 1.45; }
   @media (max-width: 760px) { .orbit-bar { grid-template-columns: 1fr 1fr; } }
@@ -264,7 +265,7 @@
   .svc-icon { width: 48px; height: 48px; margin-bottom: 1.5rem; }
   .svc-card .tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-faint); }
   .svc-card h3 { font-size: 1.4rem; margin: 0.6rem 0 0.25rem; }
-  .svc-card .tagline { color: var(--coral-light); font-weight: 300; font-size: 0.95rem; margin-bottom: 1rem; }
+  .svc-card .tagline { color: var(--terracotta); font-weight: 300; font-size: 0.95rem; margin-bottom: 1rem; }
   .svc-card p { font-size: 0.92rem; color: var(--text-muted); font-weight: 300; }
   .svc-card .aud { margin-top: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--text-faint); text-transform: uppercase; }
 
@@ -275,7 +276,7 @@
   .closer .lead { margin: 0 auto 2.25rem; }
   .closer .btn-row { justify-content: center; }
   .pkg-note { margin-top: 2.5rem; font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.08em; color: var(--text-faint); }
-  .pkg-note a { color: var(--terracotta-l); }
+  .pkg-note a { color: var(--terracotta); }
 
   /* ─── Footer ──────────────────────────────────────────── */
   footer { border-top: 1px solid var(--border); padding-block: 3rem; position: relative; z-index: 1; }
@@ -308,7 +309,7 @@
   <nav class="nav" id="nav">
     <div class="wrap">
       <a href="#top" aria-label="ORBTI — início">
-        <img class="nav-logo" src="assets/logos/orbti-wordmark-light.svg" alt="ORBTI" />
+        <img class="nav-logo" src="assets/logos/orbti-wordmark-dark.svg" alt="ORBTI" />
       </a>
       <div class="nav-links">
         <a class="nav-link" href="#conceito">Conceito</a>
@@ -336,7 +337,7 @@
           </div>
         </div>
         <div class="hero-figure">
-          <img class="hero-mark" src="assets/logos/orbti-logo-reverse.png" alt="Marca ORBTI — versão reversa" />
+          <img class="hero-mark" src="assets/logos/orbti-logo.png" alt="Marca ORBTI — tile creme (logo principal)" />
         </div>
       </div>
     </div>
@@ -403,14 +404,14 @@
       <div class="section-head reveal" style="max-width:720px">
         <span class="section-label">Cor</span>
         <h2>Um coral faz todo o trabalho.</h2>
-        <p class="lead" style="margin-top:0.75rem">Canvas warm near-black, neutros com leve cast quente, e um único acento coral→terracotta — usado no máximo duas vezes por tela.</p>
+        <p class="lead" style="margin-top:0.75rem">Canvas warm cream, neutros com leve cast quente, e um único acento coral→terracotta — usado no máximo duas vezes por tela. O near-black é o tema dark alternativo, para momentos intencionais.</p>
       </div>
       <div class="swatches reveal" style="margin-top:2.25rem">
         <div class="swatch"><div class="chip" style="background:#E8704B"></div><div class="info"><div class="name">Coral Sunset</div><div class="hex">#E8704B · acento</div></div></div>
         <div class="swatch"><div class="chip" style="background:#B85C3A"></div><div class="info"><div class="name">Terracotta</div><div class="hex">#B85C3A · ativo</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#0A0808"></div><div class="info"><div class="name">Near-black</div><div class="hex">#0A0808 · canvas</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#0A0808"></div><div class="info"><div class="name">Near-black</div><div class="hex">#0A0808 · dark alt</div></div></div>
         <div class="swatch"><div class="chip" style="background:#120B0B"></div><div class="info"><div class="name">Surface deep</div><div class="hex">#120B0B</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#FDF5F1"></div><div class="info"><div class="name">Cream</div><div class="hex">#FDF5F1 · texto/tile</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#FDF5F1;box-shadow:inset 0 0 0 1px rgba(30,5,5,0.06)"></div><div class="info"><div class="name">Cream</div><div class="hex">#FDF5F1 · canvas</div></div></div>
         <div class="swatch"><div class="chip" style="background:#3A2525"></div><div class="info"><div class="name">Border</div><div class="hex">#3A2525</div></div></div>
       </div>
 

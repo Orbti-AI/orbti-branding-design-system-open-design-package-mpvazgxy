@@ -1,6 +1,6 @@
 ---
 name: orbti-branding-design-system
-description: ORBTI brand & design system — a dark-first, warm near-black canvas with a single coral/terracotta accent, Inter + JetBrains Mono, fluid clamp() tokens, and a full web component library. Use when generating any ORBTI-branded artifact (landing pages, marketing sites, service/product pages, decks, dashboards) or when a project selects "Branding e design system" as its active design system.
+description: ORBTI brand & design system — a cream-first warm canvas (with a warm near-black dark alternate) and a single coral/terracotta accent, Inter + JetBrains Mono, fluid clamp() tokens, and a full web component library. Use when generating any ORBTI-branded artifact (landing pages, marketing sites, service/product pages, decks, dashboards) or when a project selects "Branding e design system" as its active design system.
 user-invocable: true
 ---
 
@@ -8,7 +8,8 @@ user-invocable: true
 
 An agent-usable skill for generating on-brand **ORBTI** artifacts. ORBTI is an
 AI-agent agency (services: Core / Pulse / Horizon; products: a CRM; an Academy)
-with a premium, dark-first, warm visual identity. This package was extracted
+with a premium, cream-first, warm visual identity (dark near-black as the
+intentional alternate). This package was extracted
 byte-for-byte from the shipped ORBTI site — every token, asset, and rule traces
 to a real source file (see `PROVENANCE.md`).
 
@@ -41,8 +42,8 @@ and `copy/*.md`. See `context/source-context.md` and `PROVENANCE.md`.
 - A project's **active design system** is "Branding e design system" / ORBTI.
 - The user asks for an ORBTI landing page, marketing/site page, service or product
   page, pitch deck, or dashboard.
-- Any artifact that must read as warm, dark-first, premium, with a single coral
-  accent and Inter + JetBrains Mono.
+- Any artifact that must read as warm, cream-first, premium, with a single coral
+  accent and Inter + JetBrains Mono (dark near-black reserved for intentional moments).
 
 Do **not** use it to recreate other brands, or to apply a cold/neutral grey or
 purple-gradient aesthetic — those violate the system.
@@ -76,4 +77,4 @@ Before generating, agents should review: `README.md`, `DESIGN.md`,
 - **Lift = glow,** not heavy shadow: `--shadow-glow` behind focal points.
 - **Layout:** 12-col grid with container queries; sticky blur nav; ≥80vh hero; generous `--space-2xl` section rhythm.
 - **Motion:** GSAP-style reveals, auto-rotating tabs, spring toggles; reduced-motion always honored.
-- **Two themes,** one accent: dark default, warm cream light alternate (`data-theme`).
+- **Two themes,** one accent: warm cream default, near-black dark alternate (`data-theme="dark"`).

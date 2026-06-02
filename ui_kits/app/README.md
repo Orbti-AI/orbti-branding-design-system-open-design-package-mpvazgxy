@@ -48,8 +48,11 @@ them, exactly as the Claude Design JSX-kit contract requires.
 
 ## Design notes
 
-- **Dark-first.** The shell sets `data-theme="dark"`; switch to `light` for the
-  warm cream alternate.
+- **Dark-alternate showcase.** The system default is now the warm **cream** theme
+  (see `colors_and_type.css`); this kit intentionally renders the **dark alternate**
+  (`data-theme="dark"` on `<html>`) to demonstrate the brand in a full dark surface.
+  Remove that attribute (or set `data-theme="light"`) to see the same composition on
+  the default cream canvas.
 - **One accent.** Coral appears on the primary CTA, link underline, focus rings,
   and the eyebrow pill — nowhere else. Surfaces lift with the coral *glow*, not
   heavy shadows.
