@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ORBTI · Buttons, Pills & Cards</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: var(--space-l); }
+  .block { margin-top: var(--space-xl); }
+  .row { display: flex; flex-wrap: wrap; gap: var(--space-s); align-items: center; margin-top: var(--space-s); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: var(--space-m); margin-top: var(--space-s); }
+  .card-label { font-family: var(--font-mono); font-size: var(--text-label-s); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-text-muted); }
+  .card-title { font-size: var(--text-display-s); font-weight: var(--weight-bold); margin: var(--space-2xs) 0; }
+  .card-body { font-size: var(--text-body-s); color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+  <span class="section-label">Components · Buttons · Pills · Cards</span>
+  <h1 class="display-l">Action &amp; container components</h1>
+  <p class="body-l">From <code>source_examples/design-system/buttons.css</code>, <code>pills.css</code> and <code>cards.css</code>.</p>
+
+  <div class="block">
+    <div class="section-label">Button variants</div>
+    <div class="row">
+      <a class="btn btn-primary" href="#">Agendar demo →</a>
+      <a class="btn btn-secondary" href="#">Conhecer produtos</a>
+      <a class="btn btn-ghost" href="#">Saber mais</a>
+    </div>
+    <div class="section-label" style="margin-top:var(--space-l)">Sizes</div>
+    <div class="row">
+      <a class="btn btn-primary btn-s" href="#">Small</a>
+      <a class="btn btn-primary btn-m" href="#">Medium</a>
+      <a class="btn btn-primary" href="#">Large</a>
+      <a class="btn btn-primary btn-xl" href="#">X-Large</a>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Pills &amp; tags</div>
+    <div class="row">
+      <span class="pill">Operações</span>
+      <span class="pill">Customer Experience</span>
+      <span class="pill pill-filled">Método ORBIT</span>
+      <span class="pill pill-filled">Open Source</span>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Cards — product pillars</div>
+    <div class="cards">
+      <div class="card">
+        <img src="../assets/icons/icon-orbti-core.svg" width="48" height="48" alt="Core" />
+        <div class="card-label" style="margin-top:var(--space-xs)">Serviço</div>
+        <div class="card-title">Core</div>
+        <p class="card-body">Agentes de IA para operações — automação de processos de ponta a ponta.</p>
+      </div>
+      <div class="card">
+        <img src="../assets/icons/icon-orbti-pulse.svg" width="48" height="48" alt="Pulse" />
+        <div class="card-label" style="margin-top:var(--space-xs)">Serviço</div>
+        <div class="card-title">Pulse</div>
+        <p class="card-body">Agentes para experiência do cliente — atendimento e CX em escala.</p>
+      </div>
+      <div class="card">
+        <img src="../assets/icons/icon-orbti-horizon.svg" width="48" height="48" alt="Horizon" />
+        <div class="card-label" style="margin-top:var(--space-xs)">Serviço</div>
+        <div class="card-title">Horizon</div>
+        <p class="card-body">Agentes para inteligência estratégica — BI e decisão assistida.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

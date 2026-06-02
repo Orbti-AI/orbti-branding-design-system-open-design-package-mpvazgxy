@@ -1,0 +1,112 @@
+/* ═══════════════════════════════════════════════════════════════
+   ORBTI Design System — Color Tokens
+   v1.0 — Março 2026
+
+   Paleta: Vibrant Coral + Terracotta (warm dark theme)
+   Refs: Tesoro (5-color system), Anthropic (2-color restraint),
+         Rootly (premium dark), Sandbar (cream alt), Hurry Up (selection)
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─── Brand Colors ─── */
+  --color-coral-sunset:       #E8704B;
+  --color-terracotta:         #B85C3A;
+  --color-terracotta-light:   #D47A56;
+  --color-coral-light:        #F08B63;
+
+  /* ─── Dark Theme (Default) ─── */
+  --color-bg-dark:            #0A0808;
+  --color-surface-dark:       #0E0909;
+  --color-surface-deep-dark:  #120B0B;
+  --color-ink-dark:           #2D1E1E;
+  --color-ink-soft-dark:      #3A2525;
+  --color-ink-muted-dark:     #DDD4CE;
+  --color-ink-light-dark:     #9E5A5A;
+  --color-text-primary-dark:  #FDF5F1;
+  --color-text-secondary-dark:#EDE4DC;
+
+  /* ─── Light Theme ─── */
+  --color-bg-light:           #FDF5F1;
+  --color-bg-warm:            #F5EDE6;
+  --color-surface-light:      #EDE4DC;
+  --color-surface-deep-light: #E5DAD0;
+  --color-border-light:       #DDD0C5;
+  --color-border-subtle-light:#EBE2DA;
+  --color-text-primary-light: #1E0505;
+  --color-text-secondary-light:#4A0E0E;
+  --color-text-muted-light:   #8B3A3A;
+  --color-text-light-light:   #B85C5C;
+
+  /* ─── Semantic / Functional ─── */
+  --color-accent:             var(--color-coral-sunset);
+  --color-accent-hover:       var(--color-terracotta-light);
+  --color-accent-active:      var(--color-terracotta);
+  --color-link:               var(--color-terracotta);
+  --color-link-hover:         var(--color-coral-sunset);
+  --color-success:            #4A7A5B;
+  --color-error:              #C04040;
+  --color-warning:            #C08840;
+  --color-info:               #5B7A9E;
+
+  /* ─── Alpha / Overlays ─── */
+  --color-overlay:            rgba(10, 8, 8, 0.85);
+  --color-overlay-light:      rgba(10, 8, 8, 0.50);
+  --color-coral-bg:           rgba(232, 112, 75, 0.08);
+  --color-coral-bg-hover:     rgba(232, 112, 75, 0.14);
+  --color-coral-bg-active:    rgba(232, 112, 75, 0.20);
+  --color-terracotta-bg:      rgba(184, 92, 58, 0.08);
+  --color-text-selection:     rgba(232, 112, 75, 0.35);
+  --color-scrollbar-thumb:    rgba(253, 245, 241, 0.3);
+  --color-scrollbar-track:    rgba(10, 8, 8, 0.5);
+  --color-focus-ring:         rgba(232, 112, 75, 0.5);
+
+  /* ─── Gradients ─── */
+  --gradient-hero:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(74, 14, 14, 0.2) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 70% at 20% 60%, rgba(30, 5, 5, 0.5) 0%, transparent 60%),
+    linear-gradient(180deg, var(--color-surface-deep-dark) 0%, #0a0202 100%);
+  --gradient-hero-glow-right: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(74, 14, 14, 0.2) 0%, transparent 70%);
+  --gradient-hero-glow-left:  radial-gradient(ellipse 40% 70% at 20% 60%, rgba(30, 5, 5, 0.5) 0%, transparent 60%);
+  --gradient-hero-base:       linear-gradient(180deg, var(--color-surface-deep-dark) 0%, #0a0202 100%);
+  --gradient-accent:          linear-gradient(135deg, #E8704B 0%, #B85C3A 100%);
+  --gradient-glow:            radial-gradient(circle, rgba(232, 112, 75, 0.15) 0%, transparent 70%);
+  --gradient-surface:         linear-gradient(180deg, #0E0909 0%, #0A0808 100%);
+  --gradient-overlay-bottom:  linear-gradient(180deg, transparent 0%, rgba(10, 8, 8, 0.85) 100%);
+  --gradient-overlay-top:     linear-gradient(0deg, transparent 0%, rgba(10, 8, 8, 0.6) 100%);
+
+  /* ─── Shadows (dark theme — near-black) ─── */
+  --shadow-xs:     0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-s:      0 2px 4px rgba(0, 0, 0, 0.35);
+  --shadow-m:      0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-l:      0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-xl:     0 16px 48px rgba(0, 0, 0, 0.5);
+  --shadow-glow:   0 0 40px rgba(232, 112, 75, 0.18);
+  --shadow-glow-intense: 0 0 60px rgba(232, 112, 75, 0.30);
+  --shadow-glow-subtle:  0 0 20px rgba(232, 112, 75, 0.10);
+}
+
+/* ─── Contextual theme aliases (dark = default) ─── */
+:root,
+[data-theme="dark"] {
+  --color-bg:             var(--color-bg-dark);
+  --color-surface:        var(--color-surface-dark);
+  --color-surface-deep:   var(--color-surface-deep-dark);
+  --color-border:         var(--color-ink-soft-dark);
+  --color-border-subtle:  rgba(58, 37, 37, 0.5);
+  --color-text:           var(--color-text-primary-dark);
+  --color-text-secondary: var(--color-text-secondary-dark);
+  --color-text-muted:     var(--color-ink-muted-dark);
+  --color-text-faint:     var(--color-ink-light-dark);
+}
+
+[data-theme="light"] {
+  --color-bg:             var(--color-bg-light);
+  --color-surface:        var(--color-surface-light);
+  --color-surface-deep:   var(--color-surface-deep-light);
+  --color-border:         var(--color-border-light);
+  --color-border-subtle:  var(--color-border-subtle-light);
+  --color-text:           var(--color-text-primary-light);
+  --color-text-secondary: var(--color-text-secondary-light);
+  --color-text-muted:     var(--color-text-muted-light);
+  --color-text-faint:     var(--color-text-light-light);
+}

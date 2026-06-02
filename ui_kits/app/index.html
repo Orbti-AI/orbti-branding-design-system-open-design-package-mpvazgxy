@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ORBTI · Applied UI Kit</title>
+
+  <!-- React + Babel (pinned) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+
+  <!-- Canonical design-system tokens + helpers -->
+  <link rel="stylesheet" href="../../colors_and_type.css" />
+
+  <style>
+    /* Kit-specific layout — composes the token layer above. All colors,
+       type, spacing come from colors_and_type.css custom properties. */
+    html, body { height: 100%; margin: 0; }
+    #root, .kit-app { height: 100%; }
+    .kit-app { display: flex; flex-direction: column; background: var(--color-bg); }
+    .kit-scroll { flex: 1; overflow-y: auto; scroll-behavior: smooth; }
+
+    /* Nav */
+    .kit-nav { position: sticky; top: 0; z-index: 300; height: var(--nav-height);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 var(--section-px); background: rgba(10,8,8,0);
+      border-bottom: 1px solid transparent;
+      transition: background-color var(--duration-slow) var(--ease-default), backdrop-filter var(--duration-slow) var(--ease-default), border-color var(--duration-slow) var(--ease-default); }
+    .kit-nav.is-scrolled { background: rgba(10,8,8,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom-color: var(--color-border-subtle); }
+    .kit-nav-links { display: flex; gap: var(--space-m); }
+    @media (max-width: 760px){ .kit-nav-links { display: none; } }
+    .kit-nav-link { position: relative; font-size: var(--text-body-s); font-weight: var(--weight-medium); color: var(--color-text-secondary); }
+    .kit-nav-link::after { content:''; position:absolute; left:0; bottom:-4px; height:2px; width:0; background: var(--color-coral-sunset); transition: width var(--duration-base) var(--ease-snappy); }
+    .kit-nav-link:hover { color: var(--color-coral-sunset); }
+    .kit-nav-link:hover::after { width: 100%; }
+    .kit-nav-actions { display: flex; align-items: center; gap: var(--space-xs); }
+
+    /* Hero */
+    .kit-hero { position: relative; min-height: 78vh; display: flex; align-items: center; padding: var(--space-3xl) var(--section-px) var(--space-2xl); overflow: hidden; }
+    .kit-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .kit-hero::after { content:''; position:absolute; inset:0; background: var(--gradient-overlay-bottom); z-index: 1; }
+    .kit-hero-inner { position: relative; z-index: 2; max-width: var(--container-max); margin: 0 auto; width: 100%; }
+    .kit-hero-eyebrow { margin-bottom: var(--space-m); }
+    .kit-hero-headline { max-width: 14ch; margin-bottom: var(--space-m); }
+    .kit-hero-lead { max-width: 560px; margin-bottom: var(--space-l); }
+    .kit-hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-s); }
+
+    /* Sections */
+    .kit-section { max-width: var(--container-max); margin: 0 auto; padding: var(--section-py) var(--section-px); }
+    .kit-section-head { margin-bottom: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-xs); }
+    .kit-section-head .section-label { align-self: flex-start; border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-2xs); }
+
+    /* Services */
+    .kit-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); }
+    @media (max-width: 860px){ .kit-services-grid { grid-template-columns: 1fr; } }
+    .kit-service { display: flex; flex-direction: column; gap: var(--space-2xs); }
+    .kit-service-icon { margin-bottom: var(--space-2xs); }
+    .kit-service-tags { display: flex; flex-wrap: wrap; gap: var(--space-3xs); margin-top: var(--space-s); }
+
+    /* Framework */
+    .kit-framework { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-m); }
+    @media (max-width: 860px){ .kit-framework { grid-template-columns: 1fr 1fr; } }
+    .kit-fw-step { display: flex; flex-direction: column; gap: var(--space-2xs); padding: var(--space-m); border: 1px solid var(--color-border); border-radius: var(--radius-xl); background: var(--color-surface); }
+    .kit-fw-letter { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 10px; background: var(--color-ink-soft-dark); font-weight: var(--weight-black); font-size: var(--text-display-s); color: var(--color-text); margin-bottom: var(--space-2xs); }
+
+    /* CTA / Contact */
+    .kit-cta { background: var(--gradient-hero); border-radius: var(--radius-2xl); }
+    .kit-cta-inner { display: flex; flex-direction: column; gap: var(--space-s); align-items: flex-start; }
+    .kit-form { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-s); width: 100%; max-width: 640px; margin-top: var(--space-s); }
+    .kit-field { display: flex; flex-direction: column; gap: var(--space-3xs); }
+    .kit-field-full { grid-column: 1 / -1; }
+    .kit-form .btn { grid-column: 1 / -1; justify-self: start; }
+    .kit-textarea { width: 100%; min-height: 6rem; padding: var(--space-xs); font-family: var(--font-sans); font-size: var(--text-body-m); color: var(--color-text); background: transparent; border: 1px solid var(--color-border); border-radius: var(--radius-s); resize: vertical; }
+    .kit-textarea:focus { outline: none; border-color: var(--color-coral-sunset); box-shadow: 0 0 0 3px var(--color-focus-ring); }
+    .input.is-error, .kit-textarea.is-error { border-color: var(--color-error); }
+    .kit-error { font-size: var(--text-body-xs); color: var(--color-error); }
+    .kit-success { display: inline-flex; align-items: center; gap: var(--space-2xs); padding: var(--space-s) var(--space-m); border: 1px solid var(--color-success); border-radius: var(--radius-l); color: var(--color-text); background: rgba(74,122,91,0.12); }
+    .badge-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--color-success); }
+
+    /* Footer */
+    .kit-footer { max-width: var(--container-max); margin: 0 auto; padding: var(--space-2xl) var(--section-px) var(--space-l); display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--grid-gap); border-top: 1px solid var(--color-border-subtle); }
+    @media (max-width: 760px){ .kit-footer { grid-template-columns: 1fr 1fr; } }
+    .kit-footer-brand { display: flex; flex-direction: column; gap: var(--space-xs); }
+    .kit-footer-brand p { max-width: 280px; color: var(--color-text-muted); }
+    .kit-footer-col h5 { font-family: var(--font-mono); font-size: var(--text-label-s); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-text-muted); margin-bottom: var(--space-xs); }
+    .kit-footer-col a { display: block; font-size: var(--text-body-s); color: var(--color-text-secondary); padding: var(--space-4xs) 0; }
+    .kit-footer-col a:hover { color: var(--color-coral-sunset); }
+    .kit-footer-bottom { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-l); margin-top: var(--space-l); border-top: 1px solid var(--color-border-subtle); font-size: var(--text-body-xs); color: var(--color-text-faint); }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Role components — each exposes window.<Name> -->
+  <script type="text/babel" src="components/NavBar.jsx"></script>
+  <script type="text/babel" src="components/Hero.jsx"></script>
+  <script type="text/babel" src="components/ServicesGrid.jsx"></script>
+  <script type="text/babel" src="components/FrameworkBar.jsx"></script>
+  <script type="text/babel" src="components/ContactForm.jsx"></script>
+  <script type="text/babel" src="components/Footer.jsx"></script>
+  <script type="text/babel" src="components/App.jsx"></script>
+
+  <!-- Mount the composed App -->
+  <script type="text/babel">
+    const { App } = window;
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

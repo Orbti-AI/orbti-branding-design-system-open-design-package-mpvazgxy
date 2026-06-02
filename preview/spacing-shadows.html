@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ORBTI · Elevation & Glow</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: var(--space-l); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: var(--space-xl); margin-top: var(--space-xl); }
+  .item { text-align: center; }
+  .box { height: 120px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-l); }
+  .tok { font-family: var(--font-mono); font-size: var(--text-label-s); color: var(--color-text-muted); margin-top: var(--space-m); }
+</style>
+</head>
+<body>
+  <span class="section-label">Spacing · Elevation</span>
+  <h1 class="display-l">Shadows &amp; coral glow</h1>
+  <p class="body-l">Near-black drop shadows handle real elevation; the brand's "lift" for focal emphasis is the coral <em>glow</em>, not a heavier shadow.</p>
+  <div class="grid">
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-xs)"></div><div class="tok">--shadow-xs</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-s)"></div><div class="tok">--shadow-s</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-m)"></div><div class="tok">--shadow-m</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-l)"></div><div class="tok">--shadow-l</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-xl)"></div><div class="tok">--shadow-xl</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-glow-subtle)"></div><div class="tok">--shadow-glow-subtle</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-glow)"></div><div class="tok">--shadow-glow</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-glow-intense)"></div><div class="tok">--shadow-glow-intense</div></div>
+  </div>
+</body>
+</html>

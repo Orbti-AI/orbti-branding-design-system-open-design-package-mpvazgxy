@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORBTI Core — Agentes de IA para Operações e Processos</title>
+  <meta name="description" content="Agentes de IA para operações e processos internos. Não automatizamos o fluxo antigo — construímos um novo, onde agentes executam, monitoram e se adaptam.">
+  <meta name="theme-color" content="#1E0505">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ORBTI Core — Agentes de IA para Operações">
+  <meta property="og:description" content="O núcleo que mantém tudo girando. Agentes AI-native para operações e processos internos.">
+  <meta property="og:image" content="../assets/imagens/social/01-astronaut-hand-reaching.png">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="../design-system/main.css?v=2">
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="../css/product-page.css">
+</head>
+<body>
+
+  <!-- Skip to Content (a11y) -->
+  <a href="#main-content" class="skip-to-content">Pular para conteúdo</a>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Menu principal">
+    <a href="../index.html" class="nav-logo" aria-label="ORBTI - Página inicial">
+      <img src="../assets/logos/orbti-wordmark-light.svg" alt="ORBTI" width="100" height="30">
+    </a>
+
+    <div class="nav-links desktop-only">
+      <!-- Serviços dropdown -->
+      <div class="nav-dropdown">
+        <button class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          Serviços
+          <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="core.html" class="nav-dropdown-item" role="menuitem">
+            <img src="../assets/icones/icon-orbti-core.svg" alt="" width="24" height="24" class="nav-dropdown-icon">
+            <div>
+              <span class="nav-dropdown-title">ORBTI Core</span>
+              <span class="nav-dropdown-desc">Agentes para operações</span>
+            </div>
+          </a>
+          <a href="pulse.html" class="nav-dropdown-item" role="menuitem">
+            <img src="../assets/icones/icon-orbti-pulse.svg" alt="" width="24" height="24" class="nav-dropdown-icon">
+            <div>
+              <span class="nav-dropdown-title">ORBTI Pulse</span>
+              <span class="nav-dropdown-desc">Agentes para experiência do cliente</span>
+            </div>
+          </a>
+          <a href="horizon.html" class="nav-dropdown-item" role="menuitem">
+            <img src="../assets/icones/icon-orbti-horizon.svg" alt="" width="24" height="24" class="nav-dropdown-icon">
+            <div>
+              <span class="nav-dropdown-title">ORBTI Horizon</span>
+              <span class="nav-dropdown-desc">Agentes para inteligência estratégica</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Produtos dropdown -->
+      <div class="nav-dropdown">
+        <button class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          Produtos
+          <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../produtos/crm.html" class="nav-dropdown-item" role="menuitem">
+            <div>
+              <span class="nav-dropdown-title">ORBTI CRM</span>
+              <span class="nav-dropdown-desc">CRM comercial minimalista</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Soluções dropdown -->
+      <div class="nav-dropdown">
+        <button class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          Soluções
+          <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../solucoes/orbti-framework.html" class="nav-dropdown-item" role="menuitem">
+            <div>
+              <span class="nav-dropdown-title">ORBTI Framework</span>
+              <span class="nav-dropdown-desc">Dev AI-assisted previsível</span>
+            </div>
+          </a>
+          <a href="../solucoes/orbti-webdesign.html" class="nav-dropdown-item" role="menuitem">
+            <div>
+              <span class="nav-dropdown-title">ORBTI WebDesign</span>
+              <span class="nav-dropdown-desc">Websites com craft e IA</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Academy dropdown -->
+      <div class="nav-dropdown">
+        <button class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          Academy
+          <svg class="nav-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="../academy/" class="nav-dropdown-item" role="menuitem">
+            <div>
+              <span class="nav-dropdown-title">Academy Estratégico</span>
+              <span class="nav-dropdown-desc">Claude para líderes</span>
+            </div>
+          </a>
+          <a href="../academy/" class="nav-dropdown-item" role="menuitem">
+            <div>
+              <span class="nav-dropdown-title">Academy Operacional</span>
+              <span class="nav-dropdown-desc">Claude para times</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <a href="../index.html#framework" class="nav-link">Framework</a>
+      <a href="#" class="nav-link">Blog</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="#cta" class="btn btn-primary btn-m desktop-only">Falar com a ORBTI</a>
+      <button class="nav-hamburger mobile-only" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+        <span class="nav-hamburger-inner">
+          <span class="nav-hamburger-line"></span>
+          <span class="nav-hamburger-line"></span>
+          <span class="nav-hamburger-line"></span>
+        </span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="nav-mobile-menu" id="mobile-menu" data-open="false">
+      <a href="core.html" class="nav-link">Serviços</a>
+      <a href="../produtos/crm.html" class="nav-link">Produtos</a>
+      <a href="../solucoes/orbti-framework.html" class="nav-link">Soluções</a>
+      <a href="../academy/" class="nav-link">Academy</a>
+      <a href="../index.html#framework" class="nav-link">Framework</a>
+      <a href="#" class="nav-link">Blog</a>
+      <a href="#cta" class="btn btn-primary btn-l">Falar com a ORBTI</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════════
+         S1: PRODUCT HERO
+         ═══════════════════════════════════════════════ -->
+    <section class="product-hero" id="hero">
+      <div class="section-inner">
+        <div class="product-hero-content">
+          <div class="product-hero-text">
+            <!-- Badge -->
+            <div class="pill pill-filled" data-animate="fade-up">ORBTI CORE</div>
+
+            <!-- Icon -->
+            <img src="../assets/icones/icon-orbti-core.svg" alt="ORBTI Core" width="96" height="96" class="product-hero-icon" data-animate="fade-up">
+
+            <!-- Headline -->
+            <h1 class="display-xl" data-animate="fade-up">
+              O núcleo que mantém<br>
+              <span class="text-accent">tudo girando.</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="body-xl" data-animate="fade-up" data-delay="0.2">
+              Agentes de IA para operações e processos internos. Não automatizamos o fluxo antigo —
+              construímos um novo, onde agentes executam, monitoram e se adaptam.
+              Humanos definem a estratégia. Agentes executam a operação.
+            </p>
+
+            <!-- CTAs -->
+            <div class="hero-actions" data-animate="fade-up" data-delay="0.4">
+              <a href="#cta" class="btn btn-primary btn-l">Agendar demonstração do Core <span class="btn-arrow">&rarr;</span></a>
+              <a href="#usecases" class="btn btn-secondary btn-l">Ver casos de uso</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         S2: O PROBLEMA
+         ═══════════════════════════════════════════════ -->
+    <section class="section section-dark problem-section" id="problema">
+      <div class="section-inner section-narrow text-center">
+        <span class="section-label" data-animate="fade-up">O PROBLEMA QUE RESOLVEMOS</span>
+
+        <h2 class="display-l" data-animate="fade-up">
+          Seu processo não é lento.<br>
+          Ele foi desenhado para um mundo que não existe mais.
+        </h2>
+
+        <div data-animate="fade-up" data-delay="0.2" style="margin-top: var(--space-m);">
+          <p class="lead mx-auto">
+            Empresas gastam milhares de horas por mês em processos operacionais desenhados décadas atrás.
+            Abordagens tradicionais resolvem sintomas, não causas.
+            O resultado: times sobrecarregados, erros recorrentes e escalabilidade travada.
+          </p>
+          <p class="lead mx-auto" style="margin-top: var(--space-s);">
+            O Core entende que o problema nunca foi "esse processo é lento".
+            O problema é que o processo foi desenhado para um mundo sem agentes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         S3: COMO FUNCIONA
+         ═══════════════════════════════════════════════ -->
+    <section class="section section-deep" id="como-funciona">
+      <div class="section-inner">
+        <div class="section-header text-center">
+          <span class="section-label" data-animate="fade-up">COMO FUNCIONA</span>
+          <h2 class="display-l" data-animate="fade-up">
+            Agentes que entendem contexto. Não regras fixas.
+          </h2>
+        </div>
+
+        <div class="how-grid" data-stagger="0.15">
+          <!-- Block 1 -->
+          <div class="how-block" data-step="01" data-animate="fade-up">
+            <h3>Observamos a operação real</h3>
+            <p>
+              Não a idealizada. Entendemos regras de negócio, fluxos existentes,
+              exceções, gargalos e decisões já tomadas. Antes de construir qualquer coisa.
+            </p>
+          </div>
+
+          <!-- Block 2 -->
+          <div class="how-block" data-step="02" data-animate="fade-up">
+            <h3>Construímos agentes com contexto rico</h3>
+            <p>
+              Cada agente Core é uma unidade autônoma que entende o processo,
+              toma decisões dentro de limites definidos e escala quando necessário.
+              Não é um estagiário seguindo checklist — é um analista sênior.
+            </p>
+          </div>
+
+          <!-- Block 3 -->
+          <div class="how-block" data-step="03" data-animate="fade-up">
+            <h3>O agente opera, monitora e se adapta</h3>
+            <p>
+              Execução autônoma com supervisão humana configurável.
+              Aprendizado contínuo. Tratamento de exceções inteligente.
+              O agente evolui com o tempo, não degrada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         S4: FUNCIONALIDADES
+         ═══════════════════════════════════════════════ -->
+    <section class="section section-dark" id="funcionalidades">
+      <div class="section-inner">
+        <div class="section-header text-center">
+          <span class="section-label" data-animate="fade-up">FUNCIONALIDADES</span>
+          <h2 class="display-l" data-animate="fade-up">
+            Tudo que suas operações precisam. Nada que não precisam.
+          </h2>
+        </div>
+
+        <div class="features-tabs" data-animate="fade-up">
+          <!-- Tab Navigation -->
+          <div class="features-tab-nav" role="tablist">
+            <button class="features-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-panel-1" id="tab-1">Motor de Agentes</button>
+            <button class="features-tab-btn" role="tab" aria-selected="false" aria-controls="tab-panel-2" id="tab-2">Orquestração</button>
+            <button class="features-tab-btn" role="tab" aria-selected="false" aria-controls="tab-panel-3" id="tab-3">Integrações</button>
+            <button class="features-tab-btn" role="tab" aria-selected="false" aria-controls="tab-panel-4" id="tab-4">Painel de Controle</button>
+            <button class="features-tab-btn" role="tab" aria-selected="false" aria-controls="tab-panel-5" id="tab-5">Segurança</button>
+          </div>
+
+          <!-- Tab Panels -->
+          <div class="features-tab-panel active" role="tabpanel" id="tab-panel-1" aria-labelledby="tab-1">
+            <h3>Motor de Agentes Operacionais</h3>
+            <p>
+              Criação de agentes customizados por processo e departamento.
+              Regras de negócio, limites de autonomia e gatilhos configuráveis.
+              Execução autônoma com escalação inteligente quando necessário.
+            </p>
+            <ul>
+              <li>Agentes customizados por processo</li>
+              <li>Configuração de regras sem código</li>
+              <li>Níveis de autonomia (executar, sugerir, escalar)</li>
+              <li>Aprendizado contínuo com feedback</li>
+            </ul>
+          </div>
+
+          <div class="features-tab-panel" role="tabpanel" id="tab-panel-2" aria-labelledby="tab-2" hidden>
+            <h3>Coordenação de Processos</h3>
+            <p>
+              Múltiplos agentes trabalhando juntos no mesmo fluxo.
+              Execução paralela quando possível. Recuperação automática quando algo falha.
+            </p>
+            <ul>
+              <li>Mapeamento visual de fluxos</li>
+              <li>Coordenação multi-agente</li>
+              <li>Gestão de dependências</li>
+              <li>Tratamento de falhas automático</li>
+            </ul>
+          </div>
+
+          <div class="features-tab-panel" role="tabpanel" id="tab-panel-3" aria-labelledby="tab-3" hidden>
+            <h3>Integrações Nativas</h3>
+            <p>
+              Conectores pré-construídos para as ferramentas que você já usa.
+              Conecta com qualquer sistema que você tenha. Comunicação automática entre seus sistemas.
+            </p>
+            <ul>
+              <li>ERPs: SAP, TOTVS, Omie, Bling</li>
+              <li>CRMs: Salesforce, HubSpot, Pipedrive</li>
+              <li>RH: Gupy, Convenia, Factorial</li>
+              <li>Comunicação: Slack, Teams, Email</li>
+              <li>Financeiro: Open Banking, gateways</li>
+            </ul>
+          </div>
+
+          <div class="features-tab-panel" role="tabpanel" id="tab-panel-4" aria-labelledby="tab-4" hidden>
+            <h3>Painel de Controle Operacional</h3>
+            <p>
+              Dashboard em tempo real. Métricas de execução. Logs detalhados.
+              Alertas configuráveis. Visão por departamento, processo ou agente.
+            </p>
+            <ul>
+              <li>Dashboard em tempo real</li>
+              <li>Métricas: tarefas, erros, tempo médio</li>
+              <li>Logs de cada ação e decisão</li>
+              <li>Alertas por evento ou limiar</li>
+            </ul>
+          </div>
+
+          <div class="features-tab-panel" role="tabpanel" id="tab-panel-5" aria-labelledby="tab-5" hidden>
+            <h3>Segurança e Compliance</h3>
+            <p>
+              Dados protegidos de ponta a ponta. Controle de acesso detalhado.
+              Registro completo de tudo que aconteceu. Conformidade com LGPD. Login seguro com verificação em duas etapas.
+            </p>
+            <ul>
+              <li>Dados protegidos de ponta a ponta</li>
+              <li>Controle de acesso detalhado</li>
+              <li>Conformidade LGPD</li>
+              <li>Registro completo de cada ação</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         S5: CASOS DE USO
+         ═══════════════════════════════════════════════ -->
+    <section class="section section-deep" id="usecases">
+      <div class="section-inner">
+        <div class="section-header text-center">
+          <span class="section-label" data-animate="fade-up">CASOS DE USO</span>
+          <h2 class="display-l" data-animate="fade-up">
+            De conciliação financeira a compliance.<br>
+            O Core resolve.
+          </h2>
+        </div>
+
+        <div class="usecase-grid" data-stagger="0.1">
+          <div class="usecase-card" data-animate="fade-up">
+            <h4>Conciliação Financeira</h4>
+            <p>Reconcilia transações, identifica divergências, gera relatórios automaticamente.</p>
+          </div>
+
+          <div class="usecase-card" data-animate="fade-up">
+            <h4>Onboarding de Colaboradores</h4>
+            <p>Guia novos colaboradores, provisiona acessos, acompanha os primeiros 90 dias.</p>
+          </div>
+
+          <div class="usecase-card" data-animate="fade-up">
+            <h4>Triagem e Roteamento</h4>
+            <p>Classifica demandas internas e encaminha para o time certo, com contexto.</p>
+          </div>
+
+          <div class="usecase-card" data-animate="fade-up">
+            <h4>Relatórios Operacionais</h4>
+            <p>Coleta dados de múltiplas fontes e gera reports automaticamente, sob demanda ou agendados.</p>
+          </div>
+
+          <div class="usecase-card" data-animate="fade-up">
+            <h4>Compliance e Conformidade</h4>
+            <p>Monitora processos e alerta sobre desvios de conformidade em tempo real.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         S6: PRICING
+         ═══════════════════════════════════════════════ -->
+    <section class="section section-dark" id="pricing">
+      <div class="section-inner">
+        <div class="section-header text-center">
+          <span class="section-label" data-animate="fade-up">INVESTIMENTO</span>
+          <h2 class="display-l" data-animate="fade-up">Pague pelo valor. Não por licenças.</h2>
+          <p class="lead mx-auto" data-animate="fade-up" data-delay="0.15">
+            Fase de construção (projeto) + operação contínua (mensal).
+            O modelo é modular — comece com um agente, prove o valor, expanda.
+          </p>
+        </div>
+
+        <div class="pricing-grid" data-stagger="0.15">
+          <!-- Essencial -->
+          <div class="pricing-card" data-animate="fade-up">
+            <h3>Essencial</h3>
+            <div class="pricing-price">A partir de R$ 3.000<span>/mês</span></div>
+            <p class="pricing-desc">Operação do agente, monitoramento, suporte, até 5.000 execuções/mês</p>
+          </div>
+
+          <!-- Profissional (Featured) -->
+          <div class="pricing-card featured" data-animate="fade-up">
+            <h3>Profissional</h3>
+            <div class="pricing-price">A partir de R$ 8.000<span>/mês</span></div>
+            <p class="pricing-desc">Evolução contínua, suporte prioritário, até 25.000 execuções/mês</p>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="pricing-card" data-animate="fade-up">
+            <h3>Enterprise</h3>
+            <div class="pricing-price">Sob consulta</div>
+            <p class="pricing-desc">SLA dedicado, agentes ilimitados, CSM dedicado</p>
+          </div>
+        </div>
+
+        <div class="text-center" data-animate="fade-up" style="margin-top: var(--space-l);">
+          <p class="body-s text-muted">
+            Construção: R$ 55.000 - R$ 190.000 por agente (varia por complexidade).
+            Pacotes de entrada a partir de R$ 30.000.
+          </p>
+          <a href="#cta" class="btn btn-primary btn-m" style="margin-top: var(--space-m);">Falar sobre pricing <span class="btn-arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         S7: CTA FINAL
+         ═══════════════════════════════════════════════ -->
+    <section class="section cta-product" id="cta">
+      <div class="section-inner text-center">
+        <h2 class="display-l" data-animate="fade-up">Sua operação está pronta para agentes?</h2>
+        <p class="lead mx-auto" data-animate="fade-up" data-delay="0.15" style="margin-top: var(--space-m);">
+          Vamos observar juntos. Sem compromisso, sem slide bonito.
+          Uma conversa de 30 minutos para entender seus processos.
+        </p>
+        <div class="flex justify-center" data-animate="fade-up" data-delay="0.3" style="margin-top: var(--space-l);">
+          <a href="#" class="btn btn-primary btn-l">Agendar demonstração do Core <span class="btn-arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         S8: CROSS NAVIGATION
+         ═══════════════════════════════════════════════ -->
+    <section class="section section-dark cross-nav" id="cross-nav">
+      <div class="section-inner text-center">
+        <p class="section-label" data-animate="fade-up">CONHEÇA TAMBÉM</p>
+        <div class="cross-nav-links" data-stagger="0.1">
+          <a href="pulse.html" class="cross-nav-link" data-animate="fade-up">
+            <img src="../assets/icones/icon-orbti-pulse.svg" alt="" width="40" height="40">
+            <span class="cross-nav-title">ORBTI Pulse</span>
+            <span class="cross-nav-desc">Agentes para experiência do cliente</span>
+          </a>
+          <a href="horizon.html" class="cross-nav-link" data-animate="fade-up">
+            <img src="../assets/icones/icon-orbti-horizon.svg" alt="" width="40" height="40">
+            <span class="cross-nav-title">ORBTI Horizon</span>
+            <span class="cross-nav-desc">Agentes para inteligência estratégica</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <img src="../assets/logos/orbti-wordmark-light.svg" alt="ORBTI" width="100" height="30">
+        <p>Feito com agentes, para quem acredita em agentes.</p>
+      </div>
+
+      <!-- Serviços -->
+      <div class="footer-col">
+        <h5>Serviços</h5>
+        <a href="core.html">ORBTI Core</a>
+        <a href="pulse.html">ORBTI Pulse</a>
+        <a href="horizon.html">ORBTI Horizon</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+
+      <!-- Produtos -->
+      <div class="footer-col">
+        <h5>Produtos</h5>
+        <a href="../produtos/crm.html">ORBTI CRM</a>
+      </div>
+
+      <!-- Academy -->
+      <div class="footer-col">
+        <h5>Academy</h5>
+        <a href="../academy/">Academy Estratégico</a>
+        <a href="../academy/">Academy Operacional</a>
+      </div>
+
+      <!-- Empresa -->
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <a href="#">Sobre nós</a>
+        <a href="#">Carreiras</a>
+        <a href="#">Contato</a>
+      </div>
+
+      <!-- Soluções -->
+      <div class="footer-col">
+        <h5>Soluções</h5>
+        <a href="../solucoes/orbti-framework.html">ORBTI Framework</a>
+        <a href="../solucoes/orbti-webdesign.html">ORBTI WebDesign</a>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <span>&copy; 2026 ORBTI. Todos os direitos reservados.</span>
+        <div class="footer-legal">
+          <a href="#">Privacidade</a>
+          <span>&middot;</span>
+          <a href="#">Termos</a>
+          <span>&middot;</span>
+          <a href="#">LGPD</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script src="../design-system/animations/orbti-animations.js"></script>
+  <script src="../js/product-page.js"></script>
+</body>
+</html>

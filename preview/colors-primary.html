@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ORBTI · Brand & Accent Colors</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: var(--space-l); }
+  h1 { margin: 0 0 var(--space-2xs); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-s); margin-top: var(--space-l); }
+  .sw { border: 1px solid var(--color-border); border-radius: var(--radius-l); overflow: hidden; }
+  .sw .chip { height: 96px; }
+  .sw .meta { padding: var(--space-xs); }
+  .sw .name { font-weight: var(--weight-semibold); font-size: var(--text-body-s); }
+  .sw .hex { font-family: var(--font-mono); font-size: var(--text-label-s); color: var(--color-text-muted); letter-spacing: var(--tracking-mono); }
+</style>
+</head>
+<body>
+  <span class="section-label">Color · Brand & Accent</span>
+  <h1 class="display-l">Coral sunset → terracotta</h1>
+  <p class="body-l">The single brand accent and its states. Coral does the work of CTAs, links, focus and selection; everything else is a warm neutral.</p>
+  <div class="grid">
+    <div class="sw"><div class="chip" style="background:var(--color-coral-sunset)"></div><div class="meta"><div class="name">Coral Sunset</div><div class="hex">#E8704B · --color-coral-sunset</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--color-terracotta)"></div><div class="meta"><div class="name">Terracotta</div><div class="hex">#B85C3A · --color-terracotta</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--color-terracotta-light)"></div><div class="meta"><div class="name">Terracotta Light</div><div class="hex">#D47A56 · hover</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--color-coral-light)"></div><div class="meta"><div class="name">Coral Light</div><div class="hex">#F08B63 · highlight</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--gradient-accent)"></div><div class="meta"><div class="name">Gradient Accent</div><div class="hex">--gradient-accent</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--color-coral-bg)"></div><div class="meta"><div class="name">Coral tint 8%</div><div class="hex">--color-coral-bg</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--color-coral-bg-hover)"></div><div class="meta"><div class="name">Coral tint 14%</div><div class="hex">--color-coral-bg-hover</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--color-coral-bg-active)"></div><div class="meta"><div class="name">Coral tint 20%</div><div class="hex">--color-coral-bg-active</div></div></div>
+  </div>
+
+  <span class="section-label" style="margin-top:var(--space-2xl);display:inline-block">Status</span>
+  <h2 class="display-m">Functional colors (muted to fit the warm palette)</h2>
+  <div class="grid">
+    <div class="sw"><div class="chip" style="background:var(--color-success)"></div><div class="meta"><div class="name">Success</div><div class="hex">#4A7A5B</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--color-error)"></div><div class="meta"><div class="name">Error</div><div class="hex">#C04040</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--color-warning)"></div><div class="meta"><div class="name">Warning</div><div class="hex">#C08840</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--color-info)"></div><div class="meta"><div class="name">Info</div><div class="hex">#5B7A9E</div></div></div>
+  </div>
+</body>
+</html>

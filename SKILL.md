@@ -1,123 +1,79 @@
-# ORBTI — Branding & Design System (Open Design package)
-
-A reusable Open Design design-system package for the **ORBTI** brand: a dark-first,
-warm, premium visual identity built around a single coral/terracotta accent, Inter +
-JetBrains Mono, fluid `clamp()` tokens, and a full web component library. Drop it
-into any Open Design project to generate on-brand ORBTI artifacts.
-
-`DESIGN.md` is the canonical rules document; `colors_and_type.css` is the
-machine-readable token layer; `SKILL.md` is the agent entry point.
-
+---
+name: orbti-branding-design-system
+description: ORBTI brand & design system — a dark-first, warm near-black canvas with a single coral/terracotta accent, Inter + JetBrains Mono, fluid clamp() tokens, and a full web component library. Use when generating any ORBTI-branded artifact (landing pages, marketing sites, service/product pages, decks, dashboards) or when a project selects "Branding e design system" as its active design system.
+user-invocable: true
 ---
 
-## Product Overview
+# ORBTI Branding & Design System
 
-**ORBTI is an agent-design & AI-engineering company.** Its core concept — *"ORBTI é
-agent design e AI engineering."* — frames the whole brand: it designs and engineers
-bespoke AI agents for operations, customer experience, and strategic intelligence,
-with humans in command.
+An agent-usable skill for generating on-brand **ORBTI** artifacts. ORBTI is an
+AI-agent agency (services: Core / Pulse / Horizon; products: a CRM; an Academy)
+with a premium, dark-first, warm visual identity. This package was extracted
+byte-for-byte from the shipped ORBTI site — every token, asset, and rule traces
+to a real source file (see `PROVENANCE.md`).
 
-This is evidenced directly by the source files (`prd-site-orbti.md`, `copy/*.md`,
-and the shipped HTML pages):
+## What's inside
 
-**Primary UI surfaces** (the captured site, `05-site/`):
-- **Landing page** (`index.html`) — the main conversion surface: hero, provocation, services, framework, CTA, footer.
-- **Service pages** — **Core** (agents for operations), **Pulse** (agents for customer experience), **Horizon** (agents for strategic intelligence), under `servicos/`.
-- **Product page** — **CRM** (`produtos/crm.html`).
-- **Academy** (`academy/index.html`) — training in AI agents / Claude.
-- **Solutions** — Framework (the open-source ORBIT method) and Web design, under `solucoes/`.
-- A **design-system styleguide** (`design-system/styleguide.html`) and a token-driven CSS library.
+- **`DESIGN.md`** — canonical rules: theme, color, type, spacing, layout, components, motion, voice, anti-patterns.
+- **`colors_and_type.css`** — machine-readable token + helper layer. Binds Inter + JetBrains Mono via `@import`. Paste/link this first.
+- **`README.md`** — package guide, product overview, preview manifest, reuse workflow.
+- **`PROVENANCE.md`** — source→artifact evidence map.
+- **`assets/`** — real preserved brand marks: `logos/` (full logo `orbti-logo.png` with wordmark + wordmark-less `orbti-icon.png` + reverse `orbti-logo-reverse.png` & wordmark-less reverse `orbti-icon-reverse.png` + flat wordmarks + Core/Pulse/Horizon lockups), `icons/` (orbital product icons, light + dark), `backgrounds/` (hero PNGs).
+- **`build/`** — ORBTI **app icon** (`icon.png`): the **wordmark-less** terracotta tile (no `ORBTI` lettering), recolored to match the full logo; use for favicon / app icon / avatar / social profile.
+- **`preview/`** — focused review cards (color, type, spacing, radius, shadows, components, brand assets).
+- **`source_examples/`** — original token + component CSS and a real service page, copied verbatim.
+- **`ui_kits/app/`** — a runnable React UI kit composing the ORBTI marketing surface from the tokens.
 
-**Core capabilities the product offers** (from copy + PRD): the ORBTI platform
-provides bespoke AI agents for back-office automation (Core), customer experience at
-scale (Pulse), and BI / decision intelligence (Horizon). It also includes a
-proprietary delivery method (**ORBIT**), a CRM product, and an education arm
-(Academy). The service is designed for C-level, heads of operations, CX, and BI
-buyers, and is built to convert visitors into booked demonstrations.
+> Note: **no `fonts/`** directory — fonts load from Google Fonts CDN, bound in
+> `colors_and_type.css`. `build/` holds the wordmark-less app icon (`icon.png`),
+> intentionally distinct from the full logo `assets/logos/orbti-logo.png`.
 
-**Source repository / source folder.** No Git/Figma sources were linked. The
-evidence is a local-code snapshot of the ORBTI site, originally `05-site/`, captured
-under this project's `context/` intake as `context_local-code_05-site_*` files. See
-`context/source-context.md` and `PROVENANCE.md` for the full map.
+## Source context
 
----
+Built from local code evidence only — no GitHub/Figma were linked. The evidence is
+a browser-copied snapshot of the ORBTI site (`05-site/`), captured under the
+project's `context/` intake (`context_local-code_05-site_*`). The authoritative
+tokens come from `design-system/tokens/*.css`; product context from `prd-site-orbti.md`
+and `copy/*.md`. See `context/source-context.md` and `PROVENANCE.md`.
 
-## Package contents
+## When to use this skill
 
-```
-.
-├── DESIGN.md                  ← canonical rules (theme, color, type, spacing, layout, components, motion, voice, anti-patterns)
-├── colors_and_type.css        ← token + helper layer; binds Inter + JetBrains Mono via @import
-├── README.md                  ← this guide
-├── SKILL.md                   ← agent-usable skill entry (YAML frontmatter + usage)
-├── PROVENANCE.md              ← source → artifact evidence map
-├── assets/
-│   ├── logos/                 ← orbti-wordmark-{light,dark,coral}.svg + {core,pulse,horizon}-lockup.svg
-│   ├── icons/                 ← icon-orbti-{core,pulse,horizon}[-light].svg (orbital marks)
-│   └── backgrounds/           ← 01-orbital-glow-abstract.png, 10-abstrata-background-dark.png, 01-cover-planet-orbti.png
-├── preview/                   ← focused review cards (see Preview Manifest)
-├── source_examples/
-│   ├── design-system/         ← colors.css, buttons.css, cards.css, nav.css, main.css (verbatim)
-│   └── page-servico-core.html ← a real ORBTI service page (verbatim)
-└── ui_kits/app/               ← runnable React UI kit (index.html + components/ + README.md)
-```
+- A project's **active design system** is "Branding e design system" / ORBTI.
+- The user asks for an ORBTI landing page, marketing/site page, service or product
+  page, pitch deck, or dashboard.
+- Any artifact that must read as warm, dark-first, premium, with a single coral
+  accent and Inter + JetBrains Mono.
 
-> **No `build/`** directory: the evidence is a static marketing site with no
-> `context/.../files/build/…` runtime or installer icons to preserve. All brand
-> marks are design assets under `assets/`.
-> **No `fonts/`** directory: Inter and JetBrains Mono load from Google Fonts (as on
-> the production site); `colors_and_type.css` binds them with `@import`.
+Do **not** use it to recreate other brands, or to apply a cold/neutral grey or
+purple-gradient aesthetic — those violate the system.
 
----
+## How to use
 
-## Preview Manifest
+1. **Read first:** `README.md` and `DESIGN.md` for rules; `colors_and_type.css` for tokens.
+2. **Bind tokens:** link or inline `colors_and_type.css` in the artifact's first
+   `<style>`/`<link>`; build with the semantic custom properties and helper classes
+   (`.display-*`, `.btn`, `.card`, `.pill`, `.input`, `.section-label`).
+3. **Reuse real assets:** pull marks from `assets/logos/`, `assets/icons/`, and
+   `assets/backgrounds/` — never redraw the wordmark or orbital icons.
+4. **Inspect references:** check `preview/*.html` for the intended look of each
+   subsystem, and `source_examples/design-system/*.css` for the full component CSS.
+5. **Compose product UI:** model layouts on `ui_kits/app/` (NavBar, Hero,
+   ServicesGrid, FrameworkBar, ContactForm, Footer).
+6. **Respect voice:** PT-BR, sentence-case headlines, mono uppercase eyebrows, the
+   ORBIT method, "resultados reais — não demos bonitas."
+7. **Honor anti-patterns** in `DESIGN.md §9` and always keep `prefers-reduced-motion`
+   and the visible coral focus ring.
 
-Each card is a standalone HTML file that links `../colors_and_type.css` and renders
-real brand tokens/assets. Open them from the **Design System** tab.
+Before generating, agents should review: `README.md`, `DESIGN.md`,
+`colors_and_type.css`, `preview/`, `assets/`, `source_examples/`, and
+`ui_kits/app/`.
 
-| Card (path) | What reviewers inspect | Demonstrates (source-backed) |
-|---|---|---|
-| `preview/colors-primary.html` | The single brand accent, its tints, and muted status colors | `--color-coral-sunset/-terracotta`, coral tint scale, `--color-success/-error/-warning/-info` (from `tokens/colors.css`) |
-| `preview/colors-theme-dark.html` | Default dark theme semantic surfaces + a sample card | `--color-bg/-surface/-border/-text*` dark aliases; `.btn-primary` |
-| `preview/colors-theme-light.html` | Warm cream light alternate | `data-theme="light"` semantic aliases |
-| `preview/typography-specimens.html` | Fluid type scale, Inter weights, JetBrains Mono | `.display-*`, `.lead`, `.section-label`, `--text-*` (from `tokens/typography.css`) |
-| `preview/spacing-tokens.html` | The 10-tier fluid spacing scale | `--space-4xs … --space-3xl` |
-| `preview/spacing-radius.html` | Corner radii and where each is used | `--radius-xs … --radius-pill/-full` |
-| `preview/spacing-shadows.html` | Near-black elevation vs. the coral glow | `--shadow-xs … -xl`, `--shadow-glow*` |
-| `preview/components-buttons.html` | Button variants/sizes, pills, product pillar cards | `.btn-*`, `.pill*`, `.card` (from `components/{buttons,pills,cards}.css`) + real `assets/icons/` |
-| `preview/components-inputs.html` | Form fields, coral focus ring, error state, checkbox | `.input`, `.textarea`, focus ring, error border (from `components/inputs.css`) |
-| `preview/brand-assets.html` | Real preserved logos, lockups, orbital icons, hero background | Loads files from `assets/logos/`, `assets/icons/`, `assets/backgrounds/` via `<img>` |
+## Design system highlights
 
----
-
-## Reuse workflow
-
-1. **Bind tokens.** Link or inline `colors_and_type.css` in the artifact's first
-   `<style>`/`<link>`. It defines all custom properties and a set of helper classes.
-2. **Read the rules.** Skim `DESIGN.md` (esp. §9 anti-patterns) and the relevant
-   `preview/*.html` card for the subsystem you're building.
-3. **Build with tokens, not literals.** Use `var(--color-*)`, `var(--space-*)`,
-   `var(--text-*)`, `var(--radius-*)`, and the helper classes. Never hardcode hex/px.
-4. **Reuse real assets.** Pull marks from `assets/` (wordmarks, Core/Pulse/Horizon
-   lockups, orbital icons, hero backgrounds) — don't redraw them.
-5. **Compose product UI.** Start from `ui_kits/app/` (NavBar, Hero, ServicesGrid,
-   FrameworkBar, ContactForm, Footer) and `source_examples/` for full component CSS.
-6. **Keep the voice.** PT-BR, sentence-case headlines, mono uppercase eyebrows, one
-   coral accent, glow-not-shadow lift, honored `prefers-reduced-motion` + coral
-   focus ring.
-
----
-
-## At a glance
-
-- **Theme:** dark-first warm near-black `#0A0808`; warm cream light alternate.
-- **Accent:** coral sunset `#E8704B` → terracotta `#B85C3A`, used ≤ twice per view.
-- **Type:** Inter (300→900) + JetBrains Mono; fluid `clamp()` scale.
-- **Grid:** 12-col with container queries; `1280px` max; generous section rhythm.
-- **Lift:** coral glow, not heavy shadows. **Motion:** GSAP-style reveals, honor reduced-motion.
-
-See `DESIGN.md` for the complete specification and `PROVENANCE.md` for evidence.
-
-## Provenance
-
-Formalized by Open Design from candidate b009d89f-ed22-49d9-bc93-7d952b631783.
+- **Warm near-black canvas** `#0A0808` with a faint dot-grid; every neutral carries a red/brown cast.
+- **One accent:** coral sunset `#E8704B` → terracotta `#B85C3A`, used at most twice per view; expressed as 8–20% tints for surfaces/states.
+- **Type:** Inter (300 leads → 900 display) + JetBrains Mono (uppercase, wide-tracked labels); fluid `clamp()` scale, zero breakpoints.
+- **Lift = glow,** not heavy shadow: `--shadow-glow` behind focal points.
+- **Layout:** 12-col grid with container queries; sticky blur nav; ≥80vh hero; generous `--space-2xl` section rhythm.
+- **Motion:** GSAP-style reveals, auto-rotating tabs, spring toggles; reduced-motion always honored.
+- **Two themes,** one accent: dark default, warm cream light alternate (`data-theme`).

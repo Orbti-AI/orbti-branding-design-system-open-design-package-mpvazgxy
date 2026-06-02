@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ORBTI · Brand Assets</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: var(--space-l); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: var(--space-m); margin-top: var(--space-l); }
+  .tile { padding: var(--space-m); border: 1px solid var(--color-border); border-radius: var(--radius-xl); display:flex; flex-direction:column; gap: var(--space-s); align-items:center; justify-content:center; min-height: 150px; }
+  .tile.light { background: var(--color-bg-light); }
+  .tile img { max-width: 150px; height: auto; }
+  .tile .tok { font-family: var(--font-mono); font-size: var(--text-label-s); color: var(--color-text-muted); text-align:center; }
+  .tile.light .tok { color: #8B3A3A; }
+  .hero { margin-top: var(--space-l); border-radius: var(--radius-2xl); overflow:hidden; position:relative; min-height: 260px; display:flex; align-items:flex-end; padding: var(--space-l); border:1px solid var(--color-border); }
+  .hero img.bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+  .hero::after { content:''; position:absolute; inset:0; background: var(--gradient-overlay-bottom); z-index:1; }
+  .hero .on { position:relative; z-index:2; }
+  .logo-row { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: var(--space-l); margin-top: var(--space-l); align-items:start; }
+  .logo-card { border:1px solid var(--color-border); border-radius: var(--radius-2xl); padding: var(--space-l); display:flex; flex-direction:column; gap: var(--space-m); align-items:center; }
+  .logo-card img { width:100%; max-width:300px; height:auto; border-radius: var(--radius-l); }
+  .logo-card .tile.icon { display:inline-flex; align-items:center; justify-content:center; }
+</style>
+</head>
+<body>
+  <span class="section-label">Brand · Preserved source assets</span>
+  <h1 class="display-l">Logos, marks &amp; backgrounds</h1>
+  <p class="body-l">Every mark below is a real file, preserved byte-for-byte. The illustrative tile is the official ORBTI logo; the flat wordmarks (Inter 900 + coral dot) and product lockups are the system marks.</p>
+
+  <div class="section-label" style="margin-top:var(--space-xl);display:inline-block">Official logo — primary mark (applied by default, light & dark)</div>
+  <div class="logo-row">
+    <div class="logo-card">
+      <img src="../assets/logos/orbti-logo.png" alt="ORBTI official logo — terracotta astronaut tile over the ORBTI wordmark" />
+      <span class="tok">assets/logos/orbti-logo.png · full logo (with wordmark)</span>
+    </div>
+    <div class="logo-card">
+      <img src="../build/icon.png" alt="ORBTI app icon — wordmark-less terracotta astronaut tile, no ORBTI lettering" />
+      <span class="tok">build/icon.png · app-icon (no wordmark)</span>
+    </div>
+  </div>
+  <p class="body-l" style="color:var(--color-text-muted);margin-top:var(--space-s);font-size:var(--text-body-s)">Both tiles carry the brand terracotta ink <code>#B85C3A</code>, recolored via a tonal gradient map (cream field preserved). The <strong>full logo</strong> carries the <code>ORBTI</code> wordmark for brand-level placements; the <strong>app icon</strong> drops the wordmark for small / square slots (favicon, avatar, app icon). The original burnt-umber master is kept at <code>assets/logos/orbti-logo-umber-original.png</code>.</p>
+
+  <div class="section-label" style="margin-top:var(--space-xl);display:inline-block">Reverse logo — optional, specific-case only</div>
+  <div class="logo-row">
+    <div class="logo-card" style="background:#0A0808;border-color:var(--color-border)">
+      <img src="../assets/logos/orbti-logo-reverse.png" alt="ORBTI reverse logo — near-black tile with the astronaut engraving and ORBTI wordmark in coral, coral ring border glowing on the dark canvas" />
+      <span class="tok">assets/logos/orbti-logo-reverse.png · full reverse (with wordmark)</span>
+    </div>
+    <div class="logo-card" style="background:#0A0808;border-color:var(--color-border)">
+      <img src="../assets/logos/orbti-icon-reverse.png" alt="ORBTI reverse app icon — wordmark-less near-black tile with the astronaut engraving in coral, coral ring border glowing on the dark canvas" />
+      <span class="tok">assets/logos/orbti-icon-reverse.png · reverse app-icon (no wordmark)</span>
+    </div>
+  </div>
+  <p class="body-l" style="color:var(--color-text-muted);margin-top:var(--space-s);font-size:var(--text-body-s)">Inverted tile: near-black field <code>#0A0808</code>, engraving (+ wordmark, full form) in coral <code>#E8704B</code>, border reads as a coral glow on the dark-first canvas. The <strong>full reverse</strong> carries the <code>ORBTI</code> wordmark; the <strong>reverse app icon</strong> drops it for small / square slots. <strong>Not</strong> the default for dark surfaces — the cream tile stays primary everywhere. Reach for these only in select, intentional moments (a dark hero, splash, or understated dark footer) where the dissolve-into-canvas glow is the desired effect. <strong>Never on a cream / light field</strong> — on light surfaces use the primary cream tile instead. Transparent outside the tile (RGBA).</p>
+
+  <div class="section-label" style="margin-top:var(--space-xl);display:inline-block">Wordmarks</div>
+  <div class="grid">
+    <div class="tile"><img src="../assets/logos/orbti-wordmark-light.svg" alt="ORBTI wordmark light" /><span class="tok">orbti-wordmark-light.svg</span></div>
+    <div class="tile"><img src="../assets/logos/orbti-wordmark-coral.svg" alt="ORBTI wordmark coral" /><span class="tok">orbti-wordmark-coral.svg</span></div>
+    <div class="tile light"><img src="../assets/logos/orbti-wordmark-dark.svg" alt="ORBTI wordmark dark" /><span class="tok">orbti-wordmark-dark.svg</span></div>
+  </div>
+
+  <div class="section-label" style="margin-top:var(--space-xl);display:inline-block">Product lockups</div>
+  <div class="grid">
+    <div class="tile light"><img src="../assets/logos/orbti-core-lockup.svg" alt="ORBTI Core lockup" /><span class="tok">orbti-core-lockup.svg</span></div>
+    <div class="tile light"><img src="../assets/logos/orbti-pulse-lockup.svg" alt="ORBTI Pulse lockup" /><span class="tok">orbti-pulse-lockup.svg</span></div>
+    <div class="tile light"><img src="../assets/logos/orbti-horizon-lockup.svg" alt="ORBTI Horizon lockup" /><span class="tok">orbti-horizon-lockup.svg</span></div>
+  </div>
+
+  <div class="section-label" style="margin-top:var(--space-xl);display:inline-block">Orbital product icons</div>
+  <div class="grid">
+    <div class="tile"><img src="../assets/icons/icon-orbti-core.svg" width="64" height="64" alt="Core icon" /><span class="tok">icon-orbti-core.svg</span></div>
+    <div class="tile"><img src="../assets/icons/icon-orbti-pulse.svg" width="64" height="64" alt="Pulse icon" /><span class="tok">icon-orbti-pulse.svg</span></div>
+    <div class="tile"><img src="../assets/icons/icon-orbti-horizon.svg" width="64" height="64" alt="Horizon icon" /><span class="tok">icon-orbti-horizon.svg</span></div>
+  </div>
+
+  <div class="section-label" style="margin-top:var(--space-xl);display:inline-block">Background imagery</div>
+  <div class="hero">
+    <img class="bg" src="../assets/backgrounds/01-orbital-glow-abstract.png" alt="Orbital glow abstract background" />
+    <div class="on">
+      <span class="section-label">Hero background</span>
+      <div class="display-m">01-orbital-glow-abstract.png</div>
+    </div>
+  </div>
+</body>
+</html>

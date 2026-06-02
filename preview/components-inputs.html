@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ORBTI · Form Inputs</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: var(--space-l); }
+  .form { max-width: 520px; margin-top: var(--space-l); display: grid; gap: var(--space-s); }
+  .form-label { font-family: var(--font-mono); font-size: var(--text-label-s); font-weight: var(--weight-bold); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--color-text-muted); display:block; margin-bottom: var(--space-3xs); }
+  .textarea { width:100%; min-height:7rem; padding: var(--space-xs); font-family: var(--font-sans); font-size: var(--text-body-m); color: var(--color-text); background: transparent; border: 1px solid var(--color-border); border-radius: var(--radius-s); resize: vertical; }
+  .textarea:focus { outline:none; border-color: var(--color-coral-sunset); box-shadow: 0 0 0 3px var(--color-focus-ring); }
+  .check { display:flex; align-items:center; gap: var(--space-2xs); }
+  .check input { width:18px; height:18px; accent-color: var(--color-coral-sunset); }
+  .hint { font-size: var(--text-body-xs); color: var(--color-text-faint); }
+  .err { border-color: var(--color-error) !important; }
+</style>
+</head>
+<body>
+  <span class="section-label">Components · Form inputs</span>
+  <h1 class="display-l">Inputs &amp; controls</h1>
+  <p class="body-l">From <code>source_examples/design-system/…/inputs.css</code> — coral focus ring (3px), coral check/toggle, error/success border states. Click into a field to see the focus ring.</p>
+  <form class="form" onsubmit="return false">
+    <div>
+      <label class="form-label" for="n">Nome</label>
+      <input class="input" id="n" placeholder="Como podemos te chamar?" />
+    </div>
+    <div>
+      <label class="form-label" for="e">E-mail corporativo</label>
+      <input class="input" id="e" type="email" value="contato@" />
+      <p class="hint">Usamos apenas para retornar o contato.</p>
+    </div>
+    <div>
+      <label class="form-label" for="er">Campo com erro</label>
+      <input class="input err" id="er" value="endereço inválido" />
+      <p class="hint" style="color:var(--color-error)">Confira o formato do e-mail.</p>
+    </div>
+    <div>
+      <label class="form-label" for="m">Mensagem</label>
+      <textarea class="textarea" id="m" placeholder="Conte sobre o desafio de operações…"></textarea>
+    </div>
+    <label class="check"><input type="checkbox" checked /> <span class="body-s" style="color:var(--color-text-secondary)">Quero receber o material da Academy</span></label>
+    <button class="btn btn-primary" type="submit">Enviar →</button>
+  </form>
+</body>
+</html>

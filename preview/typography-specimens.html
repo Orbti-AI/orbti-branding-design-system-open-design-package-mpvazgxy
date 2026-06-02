@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ORBTI · Typography Specimens</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: var(--space-l); }
+  .spec { padding: var(--space-s) 0; border-bottom: 1px solid var(--color-border-subtle); }
+  .spec .tok { font-family: var(--font-mono); font-size: var(--text-label-s); color: var(--color-text-faint); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+  .stack { display: grid; gap: var(--space-l); grid-template-columns: 1fr 1fr; margin-top: var(--space-l); }
+  @media (max-width: 720px){ .stack { grid-template-columns: 1fr; } }
+  .fam { padding: var(--space-m); border: 1px solid var(--color-border); border-radius: var(--radius-xl); }
+</style>
+</head>
+<body>
+  <span class="section-label">Typography · Inter + JetBrains Mono</span>
+  <h1 class="display-l">Type specimens</h1>
+  <p class="body-l">Fluid <code>clamp()</code> scale. Inter carries display and body; JetBrains Mono carries labels, eyebrows and code. Resize the window to see the scale flex.</p>
+
+  <div class="spec"><span class="tok">display-xxl · Inter 900 · clamp(2.5–4.5rem)</span><div class="display-xxl">Agent design</div></div>
+  <div class="spec"><span class="tok">display-xl · Inter 700</span><div class="display-xl">Agentes de IA</div></div>
+  <div class="spec"><span class="tok">display-l · Inter 700</span><div class="display-l">Três frentes. Profundidade real.</div></div>
+  <div class="spec"><span class="tok">display-m · Inter 600</span><div class="display-m">Core · Pulse · Horizon</div></div>
+  <div class="spec"><span class="tok">lead · Inter 300</span><div class="lead">Agentes de IA que redefinem operações, transformam a experiência do cliente e entregam inteligência estratégica.</div></div>
+  <div class="spec"><span class="tok">body-l · Inter 400</span><p class="body-l">Desenhamos processos para agentes, com humanos no comando. Resultados reais — não demos bonitas.</p></div>
+  <div class="spec"><span class="tok">section-label · JetBrains Mono 700 · 0.3em</span><div class="section-label">Por que existimos</div></div>
+
+  <div class="stack">
+    <div class="fam">
+      <div class="section-label">Inter — weights</div>
+      <p style="font-weight:300;font-size:1.5rem;margin:.4rem 0">300 · Light leads</p>
+      <p style="font-weight:400;font-size:1.5rem;margin:.4rem 0">400 · Regular body</p>
+      <p style="font-weight:600;font-size:1.5rem;margin:.4rem 0">600 · Semibold UI</p>
+      <p style="font-weight:900;font-size:1.5rem;margin:.4rem 0">900 · Black display</p>
+    </div>
+    <div class="fam">
+      <div class="section-label">JetBrains Mono</div>
+      <pre style="margin-top:var(--space-xs)"><code>npm install @orbti/agents
+--color-coral-sunset: #E8704B;
+ORBIT · 0123456789</code></pre>
+    </div>
+  </div>
+</body>
+</html>

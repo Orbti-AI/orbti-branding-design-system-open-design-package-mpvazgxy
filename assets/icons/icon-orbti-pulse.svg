@@ -1,0 +1,4 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="24" cy="24" r="22" stroke="#E8704B" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.2"/>
+  <polyline points="2,24 12,24 16,14 20,34 24,10 28,38 32,18 36,24 46,24" stroke="#E8704B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

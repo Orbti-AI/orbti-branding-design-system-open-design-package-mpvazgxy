@@ -1,0 +1,141 @@
+/* ═══════════════════════════════════════════════════════════════
+   ORBTI Design System — Buttons
+
+   3 variants: primary (coral CTA), secondary (outline), ghost
+   4 sizes: s, m, l, xl
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Base Button ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs);
+  font-family: var(--font-sans);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-cta);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    background-color var(--duration-base) var(--ease-default),
+    border-color var(--duration-base) var(--ease-default),
+    color var(--duration-base) var(--ease-default),
+    box-shadow var(--duration-base) var(--ease-default),
+    transform var(--duration-fast) var(--ease-default);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ─── Sizes ─── */
+.btn-s {
+  height: var(--btn-height-s);
+  padding: 0 var(--space-xs);
+  font-size: 0.8125rem;
+  border-radius: var(--radius-xs);
+}
+
+.btn-m {
+  height: var(--btn-height-m);
+  padding: 0 var(--space-s);
+  font-size: var(--text-body-s);
+  border-radius: var(--radius-s);
+}
+
+.btn-l {
+  height: var(--btn-height-l);
+  padding: 0 1.75rem;
+  font-size: var(--text-body-m);
+  border-radius: var(--radius-s);
+}
+
+.btn-xl {
+  height: var(--btn-height-xl);
+  padding: 0 2.25rem;
+  font-size: var(--text-body-m);
+  border-radius: var(--radius-s);
+}
+
+/* ─── Primary (Coral CTA) ─── */
+.btn-primary {
+  background-color: var(--color-coral-sunset);
+  color: var(--color-bg-light);
+  border-color: var(--color-coral-sunset);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-terracotta-light);
+  border-color: var(--color-terracotta-light);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:active {
+  background-color: var(--color-terracotta);
+  border-color: var(--color-terracotta);
+  box-shadow: none;
+}
+
+/* ─── Secondary (Outline) ─── */
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border-color: var(--color-text-secondary);
+}
+
+.btn-secondary:hover {
+  color: var(--color-coral-sunset);
+  border-color: var(--color-coral-sunset);
+}
+
+.btn-secondary:active {
+  background-color: var(--color-coral-bg);
+}
+
+/* ─── Ghost ─── */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-coral-sunset);
+  border-color: transparent;
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-coral-bg);
+}
+
+.btn-ghost:active {
+  background-color: var(--color-coral-bg-active);
+}
+
+/* ─── Icon in Button ─── */
+.btn svg,
+.btn .btn-icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+/* ─── Icon-Only Button ─── */
+.btn-icon-only {
+  padding: 0;
+  aspect-ratio: 1;
+}
+
+/* ─── Button Group ─── */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  align-items: center;
+}

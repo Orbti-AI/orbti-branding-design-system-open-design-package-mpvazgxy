@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 90" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+    </style>
+  </defs>
+  <text x="10" y="48" font-family="Inter, -apple-system, sans-serif" font-size="48" font-weight="900" fill="#4A0E0E" letter-spacing="-0.03em">ORBTI</text>
+  <circle cx="192" cy="32" r="3" fill="#E8704B" />
+  <text x="10" y="75" font-family="Inter, -apple-system, sans-serif" font-size="16" font-weight="400" fill="#4A0E0E" letter-spacing="-0.03em">Horizon</text>
+</svg>

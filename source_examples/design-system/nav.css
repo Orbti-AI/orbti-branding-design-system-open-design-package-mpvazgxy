@@ -1,0 +1,197 @@
+/* ═══════════════════════════════════════════════════════════════
+   ORBTI Design System — Navigation
+
+   Sticky nav with blur backdrop. Mobile hamburger.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Top Banner (optional promo) ─── */
+.nav-banner {
+  height: var(--nav-banner-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-ink-dark);
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-label-m);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  z-index: var(--z-nav);
+}
+
+.nav-banner a {
+  color: var(--color-coral-sunset);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* ─── Main Nav ─── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--site-margin);
+  background: rgba(10, 8, 8, 0);
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--duration-slow) var(--ease-default),
+    backdrop-filter var(--duration-slow) var(--ease-default),
+    border-color var(--duration-slow) var(--ease-default);
+}
+
+.nav-scrolled {
+  background: rgba(10, 8, 8, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: var(--color-border-subtle);
+}
+
+/* ─── Logo ─── */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-logo svg,
+.nav-logo img {
+  height: 24px;
+  width: auto;
+}
+
+/* ─── Nav Links ─── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+}
+
+.nav-link {
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: var(--text-body-s);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-coral-sunset);
+  transition: width var(--duration-base) var(--ease-snappy);
+}
+
+.nav-link:hover {
+  color: var(--color-coral-sunset);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link[aria-current="page"] {
+  color: var(--color-text);
+}
+
+.nav-link[aria-current="page"]::after {
+  width: 100%;
+  background: var(--color-text-muted);
+}
+
+/* ─── Nav Actions ─── */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* ─── Hamburger Button ─── */
+.nav-hamburger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-hamburger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 1px;
+  transition:
+    transform var(--duration-base) var(--ease-snappy),
+    opacity var(--duration-fast) var(--ease-default);
+}
+
+.nav-hamburger-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Hamburger open state */
+.nav-hamburger[aria-expanded="true"] .nav-hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-hamburger[aria-expanded="true"] .nav-hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.nav-hamburger[aria-expanded="true"] .nav-hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── Mobile Menu Overlay ─── */
+.nav-mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-nav) - 1);
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-l);
+  padding: var(--space-2xl) var(--site-margin);
+  clip-path: circle(0% at top right);
+  transition: clip-path var(--duration-slow) var(--ease-snappy);
+  pointer-events: none;
+}
+
+.nav-mobile-menu[data-open="true"] {
+  clip-path: circle(150% at top right);
+  pointer-events: auto;
+}
+
+.nav-mobile-menu .nav-link {
+  font-size: var(--text-display-m);
+  font-weight: var(--weight-bold);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .nav-links,
+  .nav-actions .btn:not(.nav-hamburger) {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+}

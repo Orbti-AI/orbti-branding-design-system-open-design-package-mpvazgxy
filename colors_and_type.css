@@ -1,0 +1,296 @@
+/* ═══════════════════════════════════════════════════════════════
+   ORBTI Design System — colors_and_type.css
+   Canonical, reusable token + typography layer.
+
+   Source of truth: extracted byte-for-byte from the shipped ORBTI
+   site design-system (05-site/design-system/tokens/*.css + base/*).
+   See PROVENANCE.md for the file-by-file evidence map.
+
+   Theme: warm near-black "dark-first" canvas with a single coral/
+   terracotta accent. Light theme is a warm cream alternate.
+   Type: Inter (sans) + JetBrains Mono (mono), fluid clamp() scale.
+
+   Drop this file into the first <style>/<link> of any artifact, then
+   build with the semantic tokens and helper classes below.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Brand fonts (no local font files were captured — bound via CDN,
+       matching the production site's Google Fonts loader) ─── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* ═══ COLOR ═══════════════════════════════════════════════════ */
+
+  /* ─ Brand ─ */
+  --color-coral-sunset:        #E8704B;   /* primary accent · CTAs · links */
+  --color-terracotta:          #B85C3A;   /* secondary accent · active */
+  --color-terracotta-light:    #D47A56;   /* hover */
+  --color-coral-light:         #F08B63;   /* highlight · inline code */
+
+  /* ─ Dark theme (default) ─ */
+  --color-bg-dark:             #0A0808;
+  --color-surface-dark:        #0E0909;
+  --color-surface-deep-dark:   #120B0B;
+  --color-ink-dark:            #2D1E1E;
+  --color-ink-soft-dark:       #3A2525;
+  --color-ink-muted-dark:      #DDD4CE;
+  --color-ink-light-dark:      #9E5A5A;
+  --color-text-primary-dark:   #FDF5F1;
+  --color-text-secondary-dark: #EDE4DC;
+
+  /* ─ Light theme (warm cream alternate) ─ */
+  --color-bg-light:            #FDF5F1;
+  --color-bg-warm:             #F5EDE6;
+  --color-surface-light:       #EDE4DC;
+  --color-surface-deep-light:  #E5DAD0;
+  --color-border-light:        #DDD0C5;
+  --color-border-subtle-light: #EBE2DA;
+  --color-text-primary-light:  #1E0505;
+  --color-text-secondary-light:#4A0E0E;
+  --color-text-muted-light:    #8B3A3A;
+  --color-text-light-light:    #B85C5C;
+
+  /* ─ Semantic / functional ─ */
+  --color-accent:        var(--color-coral-sunset);
+  --color-accent-hover:  var(--color-terracotta-light);
+  --color-accent-active: var(--color-terracotta);
+  --color-link:          var(--color-terracotta);
+  --color-link-hover:    var(--color-coral-sunset);
+  --color-success:       #4A7A5B;
+  --color-error:         #C04040;
+  --color-warning:       #C08840;
+  --color-info:          #5B7A9E;
+
+  /* ─ Alpha / overlays ─ */
+  --color-overlay:         rgba(10, 8, 8, 0.85);
+  --color-overlay-light:   rgba(10, 8, 8, 0.50);
+  --color-coral-bg:        rgba(232, 112, 75, 0.08);
+  --color-coral-bg-hover:  rgba(232, 112, 75, 0.14);
+  --color-coral-bg-active: rgba(232, 112, 75, 0.20);
+  --color-terracotta-bg:   rgba(184, 92, 58, 0.08);
+  --color-text-selection:  rgba(232, 112, 75, 0.35);
+  --color-focus-ring:      rgba(232, 112, 75, 0.5);
+
+  /* ─ Gradients ─ */
+  --gradient-accent: linear-gradient(135deg, #E8704B 0%, #B85C3A 100%);
+  --gradient-glow:   radial-gradient(circle, rgba(232, 112, 75, 0.15) 0%, transparent 70%);
+  --gradient-hero:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(74, 14, 14, 0.2) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 70% at 20% 60%, rgba(30, 5, 5, 0.5) 0%, transparent 60%),
+    linear-gradient(180deg, var(--color-surface-deep-dark) 0%, #0a0202 100%);
+  --gradient-surface: linear-gradient(180deg, #0E0909 0%, #0A0808 100%);
+  --gradient-overlay-bottom: linear-gradient(180deg, transparent 0%, rgba(10, 8, 8, 0.85) 100%);
+
+  /* ─ Shadows (dark theme — near-black) ─ */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-s:  0 2px 4px rgba(0, 0, 0, 0.35);
+  --shadow-m:  0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-l:  0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --shadow-glow:         0 0 40px rgba(232, 112, 75, 0.18);
+  --shadow-glow-intense: 0 0 60px rgba(232, 112, 75, 0.30);
+  --shadow-glow-subtle:  0 0 20px rgba(232, 112, 75, 0.10);
+
+  /* ═══ TYPOGRAPHY ══════════════════════════════════════════════ */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  /* Display scale (fluid) */
+  --text-display-xxl: clamp(2.5rem, 2rem + 2.1vw, 4.5rem);
+  --text-display-xl:  clamp(2rem, 1.65rem + 1.5vw, 3.25rem);
+  --text-display-l:   clamp(1.625rem, 1.4rem + 0.95vw, 2.375rem);
+  --text-display-m:   clamp(1.375rem, 1.3rem + 0.327vw, 1.75rem);
+  --text-display-s:   clamp(1.125rem, 1.06rem + 0.27vw, 1.3rem);
+
+  /* Body scale */
+  --text-body-xl: clamp(1.125rem, 1.06rem + 0.27vw, 1.3rem);
+  --text-body-l:  clamp(1rem, 0.97rem + 0.13vw, 1.1rem);
+  --text-body-m:  0.9375rem;
+  --text-body-s:  0.8125rem;
+  --text-body-xs: 0.6875rem;
+
+  /* Label / mono scale */
+  --text-label-l: 0.875rem;
+  --text-label-m: 0.75rem;
+  --text-label-s: 0.625rem;
+  --text-mono:    clamp(0.8rem, 0.531rem + 1.469vw, 1rem);
+
+  /* Line heights */
+  --leading-display: 1.1;
+  --leading-heading: 1.25;
+  --leading-body:    1.65;
+  --leading-tight:   1.3;
+  --leading-mono:    1.5;
+  --leading-none:    1;
+
+  /* Letter spacing */
+  --tracking-display: -0.04em;
+  --tracking-heading: -0.02em;
+  --tracking-body:    0;
+  --tracking-label:   0.12em;
+  --tracking-mono:    0.02em;
+  --tracking-wide:    0.3em;
+  --tracking-cta:     0.02em;
+
+  /* Weights */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+  --weight-black: 900;
+
+  /* ═══ SPACING / STRUCTURE ═════════════════════════════════════ */
+  --space-4xs: clamp(0.125rem, 0.1rem + 0.1vw, 0.25rem);
+  --space-3xs: clamp(0.25rem, 0.2rem + 0.2vw, 0.5rem);
+  --space-2xs: clamp(0.5rem, 0.4rem + 0.4vw, 0.75rem);
+  --space-xs:  clamp(0.75rem, 0.65rem + 0.4vw, 1rem);
+  --space-s:   clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+  --space-m:   clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+  --space-l:   clamp(2rem, 1.6rem + 1.6vw, 3rem);
+  --space-xl:  clamp(3rem, 2.4rem + 2.4vw, 4.5rem);
+  --space-2xl: clamp(4rem, 3.2rem + 3.2vw, 6rem);
+  --space-3xl: clamp(6rem, 4.8rem + 4.8vw, 9rem);
+
+  --section-py: var(--space-2xl);
+  --section-px: clamp(1.5rem, 1rem + 2vw, 3rem);
+  --site-margin: clamp(1.5rem, 1.082rem + 3.918vw, 5rem);
+  --container-max: 1280px;
+  --container-narrow: 720px;
+  --container-wide: 1440px;
+  --grid-columns: 12;
+  --grid-gap: clamp(1rem, 0.8rem + 0.8vw, 1.5rem);
+
+  /* Border radius */
+  --radius-xs: 4px;
+  --radius-s:  6px;
+  --radius-m:  8px;
+  --radius-l:  12px;
+  --radius-xl: 14px;
+  --radius-2xl: 20px;
+  --radius-pill: 100px;
+  --radius-full: 50%;
+
+  /* Component heights */
+  --nav-height: 4.25rem;
+  --btn-height-s: 2rem;
+  --btn-height-m: 2.5rem;
+  --btn-height-l: 3rem;
+  --btn-height-xl: 3.5rem;
+
+  /* ═══ MOTION ══════════════════════════════════════════════════ */
+  --duration-instant: 100ms;
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+  --duration-reveal: 800ms;
+  --ease-default: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-out:     cubic-bezier(0, 0.55, 0.45, 1);
+  --ease-in-out:  cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-snappy:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ─── Theme aliases (dark = default) ─── */
+:root,
+[data-theme="dark"] {
+  --color-bg:             var(--color-bg-dark);
+  --color-surface:        var(--color-surface-dark);
+  --color-surface-deep:   var(--color-surface-deep-dark);
+  --color-border:         var(--color-ink-soft-dark);
+  --color-border-subtle:  rgba(58, 37, 37, 0.5);
+  --color-text:           var(--color-text-primary-dark);
+  --color-text-secondary: var(--color-text-secondary-dark);
+  --color-text-muted:     var(--color-ink-muted-dark);
+  --color-text-faint:     var(--color-ink-light-dark);
+}
+
+[data-theme="light"] {
+  --color-bg:             var(--color-bg-light);
+  --color-surface:        var(--color-surface-light);
+  --color-surface-deep:   var(--color-surface-deep-light);
+  --color-border:         var(--color-border-light);
+  --color-border-subtle:  var(--color-border-subtle-light);
+  --color-text:           var(--color-text-primary-light);
+  --color-text-secondary: var(--color-text-secondary-light);
+  --color-text-muted:     var(--color-text-muted-light);
+  --color-text-faint:     var(--color-text-light-light);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Minimal base + helper classes so previews and the UI kit render
+   the brand faithfully without pulling the whole source library.
+   (Full component CSS lives under source_examples/design-system/.)
+   ═══════════════════════════════════════════════════════════════ */
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-m);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--color-text-selection); color: var(--color-text-primary-dark); }
+
+/* Display / headings */
+.display-xxl { font-family: var(--font-sans); font-size: var(--text-display-xxl); font-weight: var(--weight-black); line-height: var(--leading-display); letter-spacing: var(--tracking-display); color: var(--color-text); }
+.display-xl  { font-family: var(--font-sans); font-size: var(--text-display-xl);  font-weight: var(--weight-bold);  line-height: var(--leading-display); letter-spacing: var(--tracking-display); color: var(--color-text); }
+.display-l   { font-family: var(--font-sans); font-size: var(--text-display-l);   font-weight: var(--weight-bold);  line-height: var(--leading-heading); letter-spacing: var(--tracking-heading); color: var(--color-text); }
+.display-m   { font-family: var(--font-sans); font-size: var(--text-display-m);   font-weight: var(--weight-semibold); line-height: var(--leading-heading); letter-spacing: var(--tracking-heading); color: var(--color-text); }
+.display-s   { font-family: var(--font-sans); font-size: var(--text-display-s);   font-weight: var(--weight-bold);  line-height: var(--leading-tight);   letter-spacing: var(--tracking-heading); color: var(--color-text); }
+
+.lead    { font-size: var(--text-body-xl); font-weight: var(--weight-light); line-height: var(--leading-body); color: var(--color-text-secondary); }
+.body-l  { font-size: var(--text-body-l); line-height: var(--leading-body); color: var(--color-text-secondary); }
+.body-m  { font-size: var(--text-body-m); line-height: var(--leading-body); }
+.body-s  { font-size: var(--text-body-s); line-height: var(--leading-body); color: var(--color-text-muted); }
+
+/* Mono section label / eyebrow */
+.section-label,
+.label-s {
+  font-family: var(--font-mono);
+  font-size: var(--text-label-s);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.text-accent { color: var(--color-accent); }
+.text-coral  { color: var(--color-coral-sunset); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2xs);
+  font-family: var(--font-sans); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-cta);
+  text-decoration: none; white-space: nowrap; cursor: pointer; border: 1px solid transparent;
+  height: var(--btn-height-l); padding: 0 1.75rem; font-size: var(--text-body-m); border-radius: var(--radius-s);
+  transition: background-color var(--duration-base) var(--ease-default), border-color var(--duration-base) var(--ease-default), color var(--duration-base) var(--ease-default), box-shadow var(--duration-base) var(--ease-default), transform var(--duration-fast) var(--ease-default);
+}
+.btn:active { transform: scale(0.98); }
+.btn-s { height: var(--btn-height-s); padding: 0 var(--space-xs); font-size: 0.8125rem; border-radius: var(--radius-xs); }
+.btn-m { height: var(--btn-height-m); padding: 0 var(--space-s); font-size: var(--text-body-s); }
+.btn-xl { height: var(--btn-height-xl); padding: 0 2.25rem; }
+.btn-primary { background: var(--color-coral-sunset); color: var(--color-bg-light); border-color: var(--color-coral-sunset); }
+.btn-primary:hover { background: var(--color-terracotta-light); border-color: var(--color-terracotta-light); box-shadow: var(--shadow-glow); }
+.btn-secondary { background: transparent; color: var(--color-text-secondary); border-color: var(--color-text-secondary); }
+.btn-secondary:hover { color: var(--color-coral-sunset); border-color: var(--color-coral-sunset); }
+.btn-ghost { background: transparent; color: var(--color-coral-sunset); border-color: transparent; }
+.btn-ghost:hover { background: var(--color-coral-bg); }
+
+/* Card */
+.card { position: relative; padding: var(--space-m); border: 1px solid var(--color-border); border-radius: var(--radius-xl); background: transparent; transition: border-color var(--duration-base) var(--ease-default), background-color var(--duration-base) var(--ease-default); }
+.card:hover { border-color: rgba(232, 112, 75, 0.3); background: var(--color-coral-bg); }
+
+/* Pill */
+.pill { display: inline-flex; align-items: center; gap: var(--space-3xs); padding: 6px 14px; border-radius: var(--radius-pill); font-family: var(--font-mono); font-size: var(--text-label-m); font-weight: var(--weight-medium); border: 1px solid var(--color-border); background: transparent; color: var(--color-text-muted); }
+.pill-filled { background: var(--color-coral-bg); border-color: transparent; color: var(--color-coral-sunset); }
+
+/* Input */
+.input { width: 100%; height: var(--btn-height-l); padding: 0 var(--space-xs); font-family: var(--font-sans); font-size: var(--text-body-m); color: var(--color-text); background: transparent; border: 1px solid var(--color-border); border-radius: var(--radius-s); transition: border-color var(--duration-base) var(--ease-default), box-shadow var(--duration-base) var(--ease-default); }
+.input::placeholder { color: var(--color-text-faint); }
+.input:focus { outline: none; border-color: var(--color-coral-sunset); box-shadow: 0 0 0 3px var(--color-focus-ring); }

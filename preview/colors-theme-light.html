@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ORBTI · Light Theme (warm cream alternate)</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: var(--space-l); }
+  .rows { display: grid; gap: var(--space-2xs); margin-top: var(--space-l); max-width: 720px; }
+  .row { display: grid; grid-template-columns: 64px 1fr auto; align-items: center; gap: var(--space-s); padding: var(--space-2xs); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-m); }
+  .box { width: 64px; height: 44px; border-radius: var(--radius-s); border: 1px solid var(--color-border); }
+  .tok { font-family: var(--font-mono); font-size: var(--text-label-m); color: var(--color-text-muted); }
+  .demo { margin-top: var(--space-l); padding: var(--space-l); border-radius: var(--radius-xl); background: var(--color-surface); border: 1px solid var(--color-border); }
+</style>
+</head>
+<body>
+  <span class="section-label">Color · Theme</span>
+  <h1 class="display-l">Light theme — warm cream alternate</h1>
+  <p class="body-l">Applied with <code>data-theme="light"</code> on <code>&lt;html&gt;</code>. The same coral accent over a warm cream paper — never clinical white.</p>
+  <div class="rows">
+    <div class="row"><span class="box" style="background:var(--color-bg)"></span><span>Background</span><span class="tok">#FDF5F1 · --color-bg</span></div>
+    <div class="row"><span class="box" style="background:var(--color-surface)"></span><span>Surface</span><span class="tok">#EDE4DC · --color-surface</span></div>
+    <div class="row"><span class="box" style="background:var(--color-surface-deep)"></span><span>Surface deep</span><span class="tok">#E5DAD0 · --color-surface-deep</span></div>
+    <div class="row"><span class="box" style="background:var(--color-border)"></span><span>Border</span><span class="tok">#DDD0C5 · --color-border</span></div>
+    <div class="row"><span class="box" style="background:var(--color-text)"></span><span>Text primary</span><span class="tok">#1E0505 · --color-text</span></div>
+    <div class="row"><span class="box" style="background:var(--color-text-secondary)"></span><span>Text secondary</span><span class="tok">#4A0E0E · --color-text-secondary</span></div>
+    <div class="row"><span class="box" style="background:var(--color-text-muted)"></span><span>Text muted</span><span class="tok">#8B3A3A · --color-text-muted</span></div>
+  </div>
+  <div class="demo">
+    <span class="section-label">Academy</span>
+    <h2 class="display-m">Capacitação em agentes de IA.</h2>
+    <p class="body-l">The warm cream surface keeps the brand identity in a light context.</p>
+    <a class="btn btn-primary" href="#">Conhecer a Academy →</a>
+  </div>
+</body>
+</html>

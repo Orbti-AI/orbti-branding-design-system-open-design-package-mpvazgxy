@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ORBTI · Radius Scale</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: var(--space-l); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap: var(--space-m); margin-top: var(--space-l); }
+  .item { text-align: center; }
+  .box { height: 96px; background: var(--color-coral-bg); border: 1px solid var(--color-coral-sunset); }
+  .tok { font-family: var(--font-mono); font-size: var(--text-label-s); color: var(--color-text-muted); margin-top: var(--space-2xs); }
+</style>
+</head>
+<body>
+  <span class="section-label">Spacing · Border radius</span>
+  <h1 class="display-l">Corner radii</h1>
+  <p class="body-l">Buttons use <code>--radius-s</code> (6px); cards use <code>--radius-xl</code> (14px); pills/avatars use <code>--radius-pill</code>/<code>--radius-full</code>.</p>
+  <div class="grid">
+    <div class="item"><div class="box" style="border-radius:var(--radius-xs)"></div><div class="tok">xs · 4px</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-s)"></div><div class="tok">s · 6px (btn)</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-m)"></div><div class="tok">m · 8px</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-l)"></div><div class="tok">l · 12px</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-xl)"></div><div class="tok">xl · 14px (card)</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-2xl)"></div><div class="tok">2xl · 20px</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-pill)"></div><div class="tok">pill · 100px</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-full);aspect-ratio:1;height:auto;width:96px;margin:0 auto"></div><div class="tok">full · 50%</div></div>
+  </div>
+</body>
+</html>

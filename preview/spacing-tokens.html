@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ORBTI · Spacing Scale</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: var(--space-l); }
+  .row { display: grid; grid-template-columns: 160px 1fr; align-items: center; gap: var(--space-s); padding: var(--space-3xs) 0; }
+  .tok { font-family: var(--font-mono); font-size: var(--text-label-m); color: var(--color-text-muted); }
+  .bar { height: 18px; background: var(--gradient-accent); border-radius: var(--radius-xs); }
+</style>
+</head>
+<body>
+  <span class="section-label">Spacing · Fluid clamp() scale</span>
+  <h1 class="display-l">10-tier spacing</h1>
+  <p class="body-l">Every step is fluid — it grows with the viewport. Section rhythm uses <code>--space-2xl</code>; tight UI gaps use <code>--space-3xs/2xs</code>.</p>
+  <div style="margin-top:var(--space-l)">
+    <div class="row"><span class="tok">--space-4xs (2–4px)</span><span class="bar" style="width:var(--space-4xs)"></span></div>
+    <div class="row"><span class="tok">--space-3xs (4–8px)</span><span class="bar" style="width:var(--space-3xs)"></span></div>
+    <div class="row"><span class="tok">--space-2xs (8–12px)</span><span class="bar" style="width:var(--space-2xs)"></span></div>
+    <div class="row"><span class="tok">--space-xs (12–16px)</span><span class="bar" style="width:var(--space-xs)"></span></div>
+    <div class="row"><span class="tok">--space-s (16–20px)</span><span class="bar" style="width:var(--space-s)"></span></div>
+    <div class="row"><span class="tok">--space-m (24–32px)</span><span class="bar" style="width:var(--space-m)"></span></div>
+    <div class="row"><span class="tok">--space-l (32–48px)</span><span class="bar" style="width:var(--space-l)"></span></div>
+    <div class="row"><span class="tok">--space-xl (48–72px)</span><span class="bar" style="width:var(--space-xl)"></span></div>
+    <div class="row"><span class="tok">--space-2xl (64–96px)</span><span class="bar" style="width:var(--space-2xl)"></span></div>
+    <div class="row"><span class="tok">--space-3xl (96–144px)</span><span class="bar" style="width:var(--space-3xl)"></span></div>
+  </div>
+</body>
+</html>
