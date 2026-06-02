@@ -10,7 +10,10 @@ function Footer() {
   return (
     <footer className="kit-footer">
       <div className="kit-footer-brand">
-        <img src="../../assets/logos/orbti-wordmark-light.svg" alt="ORBTI" height="22" />
+        {/* Cream tile leads the brand across the system (DESIGN.md §8); the
+           adjacent copy carries the name, so the full tile works as a badge. */}
+        <img src="../../assets/logos/orbti-logo.png" alt="ORBTI"
+             style={{ height: '44px', width: 'auto', borderRadius: 'var(--radius-m)' }} />
         <p className="body-s">Agentes de IA especializados. Desenhados para agentes, com humanos no comando.</p>
       </div>
       {cols.map((c) => (

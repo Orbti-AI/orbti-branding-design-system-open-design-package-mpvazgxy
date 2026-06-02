@@ -16,8 +16,16 @@ function NavBar() {
 
   return (
     <nav className={'kit-nav' + (scrolled ? ' is-scrolled' : '')} aria-label="Menu principal">
-      <a className="kit-nav-logo" href="#" aria-label="ORBTI — início">
-        <img src="../../assets/logos/orbti-wordmark-light.svg" alt="ORBTI" height="22" />
+      <a className="kit-nav-logo" href="#" aria-label="ORBTI — início"
+         style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        {/* Cream astronaut tile is the lead mark everywhere (DESIGN.md §8) —
+           even on the dark kit canvas it reads as a bright, self-contained
+           badge. Icon-only tile + external wordmark keeps the name crisp at
+           nav size, where the full tile's baked lettering would empaste. */}
+        <img src="../../assets/logos/orbti-icon.png" alt="" aria-hidden="true"
+             style={{ height: '32px', width: '32px', display: 'block' }} />
+        <img src="../../assets/logos/orbti-wordmark-light.svg" alt="ORBTI"
+             style={{ height: '18px', width: 'auto' }} />
       </a>
       <div className="kit-nav-links">
         {links.map((l) => (
