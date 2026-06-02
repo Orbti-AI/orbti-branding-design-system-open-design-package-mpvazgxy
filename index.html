@@ -127,7 +127,9 @@
     border-bottom-color: var(--border-subtle);
   }
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; width: 100%; }
-  .nav-logo { height: 22px; width: auto; }
+  .nav-brand { display: inline-flex; align-items: center; gap: 0.6rem; }
+  .nav-tile { height: 32px; width: 32px; display: block; } /* cream astronaut tile — lead brand mark */
+  .nav-logo { height: 18px; width: auto; }
   .nav-links { display: flex; gap: 2rem; align-items: center; }
   .nav-link {
     font-size: 0.9rem; color: var(--text-muted); font-weight: 500; position: relative;
@@ -308,7 +310,8 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="wrap">
-      <a href="#top" aria-label="ORBTI — início">
+      <a class="nav-brand" href="#top" aria-label="ORBTI — início">
+        <img class="nav-tile" src="assets/logos/orbti-icon.png" alt="" aria-hidden="true" />
         <img class="nav-logo" src="assets/logos/orbti-wordmark-dark.svg" alt="ORBTI" />
       </a>
       <div class="nav-links">
